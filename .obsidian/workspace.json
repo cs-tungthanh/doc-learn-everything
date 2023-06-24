@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "258cc62425381977",
+    "type": "split",
+    "children": [
+      {
+        "id": "3568591bea39d656",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "99be8cae5b32c862",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0f1411f60e646d53",
+    "type": "split",
+    "children": [
+      {
+        "id": "1daa3cc45598d760",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "685903b4a12a63da",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "401fbbcbf2810fa7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "13ea5f51331abcd6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "5cad9081c4f68d73",
+    "type": "split",
+    "children": [
+      {
+        "id": "002429552dedf138",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e782df6a6cdfb4c7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6b163151f9eff287",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "81dc99b77c91e33f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "e55a68cb1f5a614b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 378.5,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "99be8cae5b32c862",
+  "lastOpenFiles": [
+    "2023-06-24.md",
+    "Untitled.canvas",
+    "Database/Database - Partitioning.md",
+    "Database/0. Database.md",
+    "Database/Database - Normalization.md",
+    "Database/3. SQL Language (best practice).md",
+    "Database/Database - Transaction.md",
+    "Database/Database - Locking.md",
+    "Database/assets/normalize-violated-3NF.png",
+    "Database/assets/normalize-resolved-3NF.png",
+    "Database/Database - Indexing, Keys.md",
+    "Database/1. Database Questions.md",
+    "Database/assets/compare-cluster-non-cluster-index.png",
+    "Database/assets/file-structure-database.png",
+    "Database/assets/logical-physical-representation.png",
+    "Database/2. Database - Summary.md",
+    "Database/NoSQL.md",
+    "Database/SQL.md",
+    "Network/0. Networking.md",
+    "Pasted image 20230624145529.png",
+    "Three laws of motion.md",
+    "Database/assets/sequence-diagram-replication.png",
+    "Database/assets/example-master-slave.png",
+    "Network/HTTP - TCP (What you understand about HTTP?).md",
+    "Database/assets/master-slave-system-design-page12.png",
+    "Database/assets",
+    "Database",
+    "TODO list.md",
+    "Network",
+    "Untitled 1.canvas",
+    "TODO"
+  ]
+}
