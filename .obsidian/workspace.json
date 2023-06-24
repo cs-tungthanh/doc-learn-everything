@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "3568591bea39d656",
+        "id": "40418976b902aa05",
         "type": "tabs",
         "children": [
           {
-            "id": "99be8cae5b32c862",
+            "id": "f8275407d2f4d068",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Database/0. Database.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Database/0. Database.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Database/0. Database.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Database/0. Database.md"
+              }
             }
           }
         ],
@@ -139,14 +147,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "99be8cae5b32c862",
+  "active": "f8275407d2f4d068",
   "lastOpenFiles": [
+    "Database/3. SQL Language (best practice).md",
+    "Database/0. Database.md",
     "2023-06-24.md",
     "Untitled.canvas",
     "Database/Database - Partitioning.md",
-    "Database/0. Database.md",
     "Database/Database - Normalization.md",
-    "Database/3. SQL Language (best practice).md",
     "Database/Database - Transaction.md",
     "Database/Database - Locking.md",
     "Database/assets/normalize-violated-3NF.png",
