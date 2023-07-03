@@ -1,3 +1,7 @@
+---
+tags: NoSQL
+---
+
 # Benefits
 - They don’t have **a predefined schema** → supports addition, removal of field dynamically.
 - Easily store unstructured data.

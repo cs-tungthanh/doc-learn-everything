@@ -1,5 +1,5 @@
 ---
-keys: Database, Indexing, Key, PK, Clustered index, Non-clustered index.
+tags: Database, Indexing, Key, PK, Clustered index, Non-clustered index.
 ---
 # Reference
 - [Clustered Indexing](https://use-the-index-luke.com/sql/clustering)
@@ -12,13 +12,15 @@ keys: Database, Indexing, Key, PK, Clustered index, Non-clustered index.
 - Index affects to **IS_NULL** operator
 	- when this column is not indexed → needs a table full scan to find null values.
 
-# Overview Database indexing?
-## Benefits
-- speed up searching
-- Indexing helps in faster sorting and grouping of records
-## Disadvantages
+# Overview?
+## Why we need indexes for Database tables
+### Benefits
+- Speed up searching.
+- Indexing helps in faster sorting and grouping of records.
+
+### Drawbacks
 - **Additional disk space**
-	- **The** **clustered index** doesn’t take any extra space as it stores the physical order of the table records in the DB.
+	- **The clustered index** doesn’t take any extra space as it stores the physical order of the table records in the DB.
 	- **Non-Clustered Index** needs extra disk space.
 - **Slower data modification** 
 	- update record in the **clustered index**
@@ -85,17 +87,17 @@ It is similar to PK but has a slight difference:
 > **If this composite key is set as a primary key → It must be not NULL + must UNIQUE**
 > In case it is not PK → it can be null + duplicate
 
-# INDEXING
-## Definition
-- The index is nothing but a data structure that **stores the values for a specific column** in a table. An index is created on a column of a table.
-- Improve the speed of data retrieval operations
-- With `DML` operations, indices are updated, so write operations are quite costly with indexes.
-	- The more indices you have, the greater the cost. 
-	- Indexes are used to ==make READ operations faster==. 
-	- So if you have a system that is ==written-heavy but not read-heavy==, think hard about whether you need an index or not.
+# Overview
+- The index is nothing but a data structure that **store the values for a specific column** in a table (an index is created on a column table).
+- Improve the speed of data retrieval operations.
+- With DML operations, indices are updated, so write operations are quite costly with indexes. 
+   - The more indices you have, the greater the cost. 
+   - Indexes are used to make READ operations faster.
+   - So if you have a system that is **written-heavy** but not **read-heavy**, think hard about whether you need an index or not.
 - **Cardinality** is IMPORTANT
-	- **cardinality** means the **number of distinct values in a column**. 
-	- If you create an index in a column that has low cardinality, that’s not going to be beneficial since the index should reduce search space. Low cardinality does not significantly reduce search space.
+   - **Cardinality** means the **number of distinct values in a column**.
+   - If you create an index in a column that has low cardinality, that’s not going to be beneficial since the index should reduce search space. Low cardinality does not significantly reduce search space.
+
 
 ## Indexing Question
 ### 1. What would happen without an index? - FULL Table Scan

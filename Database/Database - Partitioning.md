@@ -1,6 +1,7 @@
 ---
-keys: partitioning, sharding, range-based, hash-based
+tags: partitioning, sharding, range-based, hash-based
 ---
+
 > To scale out our DB, we need to partition it. 
 > Therefore, we need to develop a partitioning scheme that would divide and store our data into different DB servers.
 

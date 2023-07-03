@@ -1,5 +1,5 @@
 ---
-keys: transaction, ACID
+tags: Transaction, ACID
 ---
 
 # Glossary

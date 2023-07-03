@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "40418976b902aa05",
+        "id": "b7e5dbeea130c40d",
         "type": "tabs",
         "children": [
           {
-            "id": "f8275407d2f4d068",
+            "id": "b1b2574831aaa3a1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Database/0. Database.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database/0. Database.md",
+                "file": "Best practices/Redis.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +98,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database/0. Database.md",
+                "file": "Best practices/Redis.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +121,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database/0. Database.md"
+                "file": "Best practices/Redis.md"
               }
             }
           }
@@ -134,8 +130,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5,
-    "collapsed": true
+    "width": 378.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -144,41 +139,59 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f8275407d2f4d068",
+  "active": "685903b4a12a63da",
   "lastOpenFiles": [
-    "Database/3. SQL Language (best practice).md",
+    "assets/skip-list-2.gif",
+    "assets/skip-list-1.png",
+    "Best practices/Redis.md",
+    "design-system/Caching.md",
+    "design-system/0. Basic System design.md",
+    "Database/1. Database Questions.md",
     "Database/0. Database.md",
-    "2023-06-24.md",
-    "Untitled.canvas",
+    "Database/Database - Indexing, Keys.md",
+    "Database/Database - Transaction.md",
+    "design-system/Availability.md",
+    "Best practices/Clean Code - SOLID.md",
+    "Network/Protocol- IP, TCP, HTTP.md",
+    "Network/IP.md",
+    "Network/HTTP - TCP (What you understand about HTTP?).md",
+    "assets/HTTP.png",
+    "Network/0. Networking.md",
+    "Best practices",
+    "assets/setnx-lock-redis.png",
+    "assets/Untitled.png.crdownload",
+    "assets",
+    "design-system",
+    "Excalidraw/Drawing 2023-06-25 14.32.39.excalidraw.md",
+    "Pasted Image 20230625152318_813.png.md",
+    "2023-06-24 - Growing technically as an engineer.md",
+    "Database/3. SQL Language (best practice).md",
+    "Database/2. Database - Summary.md",
     "Database/Database - Partitioning.md",
     "Database/Database - Normalization.md",
-    "Database/Database - Transaction.md",
     "Database/Database - Locking.md",
+    "Developer ROADMAPS.md",
+    "Database/SQL.md",
+    "Database/NoSQL.md",
+    "design-system/gRPC vs REST.md",
+    "Pasted Image 20230625152318_813.png",
+    "Pasted Image 20230625151551_356.png",
+    "Network/assert",
+    "pdf/20 patterns coding.pdf",
+    "pdf/BestPractics-SQL.pdf",
+    "pdf/Hands_On_Software_Architecture_with_Golang.pdf",
+    "Excalidraw",
+    "pdf/The staff engineer's path_a guide for individual contributors navigating growth and change (2022).pdf",
+    "Untitled.canvas",
     "Database/assets/normalize-violated-3NF.png",
     "Database/assets/normalize-resolved-3NF.png",
-    "Database/Database - Indexing, Keys.md",
-    "Database/1. Database Questions.md",
     "Database/assets/compare-cluster-non-cluster-index.png",
     "Database/assets/file-structure-database.png",
     "Database/assets/logical-physical-representation.png",
-    "Database/2. Database - Summary.md",
-    "Database/NoSQL.md",
-    "Database/SQL.md",
-    "Network/0. Networking.md",
-    "Pasted image 20230624145529.png",
-    "Three laws of motion.md",
-    "Database/assets/sequence-diagram-replication.png",
-    "Database/assets/example-master-slave.png",
-    "Network/HTTP - TCP (What you understand about HTTP?).md",
-    "Database/assets/master-slave-system-design-page12.png",
-    "Database/assets",
-    "Database",
-    "TODO list.md",
-    "Network",
-    "Untitled 1.canvas",
-    "TODO"
+    "Untitled 1.canvas"
   ]
 }

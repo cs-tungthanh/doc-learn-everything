@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "type": "folder",
+      "ctime": 1687605016653,
+      "path": "Database",
+      "title": "Database"
+    },
+    {
+      "type": "folder",
+      "ctime": 1687605036064,
+      "path": "Network",
+      "title": "Networking"
+    }
+  ]
+}
