@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "0cffd0bfda0aa1aa",
+        "id": "51fd06354473a8c3",
         "type": "tabs",
         "children": [
           {
-            "id": "34710119262c69f5",
+            "id": "5cfe9a3c48533b98",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Best practices/Redis.md",
+                "file": "Database/SQL.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Best practices/Redis.md",
+                "file": "Database/SQL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Best practices/Redis.md",
+                "file": "Database/SQL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Best practices/Redis.md"
+                "file": "Database/SQL.md"
               }
             }
           }
@@ -134,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 378.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -147,21 +148,28 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "685903b4a12a63da",
+  "active": "5cfe9a3c48533b98",
   "lastOpenFiles": [
-    "asserts/setnx-lock-redis.png.md",
+    "Database/NoSQL.md",
+    "Database/Database - Transaction.md",
+    "Database/Database - Partitioning.md",
+    "Database/Database - Normalization.md",
+    "Database/Database - Locking.md",
+    "Database/Database - Indexing, Keys.md",
+    "Database/3. SQL Language (best practice).md",
+    "Database/2. Database - Summary.md",
+    "Database/1. Database Questions.md",
     "Best practices/Redis.md",
+    "Best practices/Clean Code - SOLID.md",
+    "design-system/0. Basic System design.md",
+    "design-system/Availability.md",
+    "design-system/Caching.md",
+    "design-system/gRPC vs REST.md",
+    "asserts/setnx-lock-redis.png.md",
     "asserts",
     "assets/skip-list-2.gif",
     "assets/skip-list-1.png",
-    "design-system/Caching.md",
-    "design-system/0. Basic System design.md",
-    "Database/1. Database Questions.md",
     "Database/0. Database.md",
-    "Database/Database - Indexing, Keys.md",
-    "Database/Database - Transaction.md",
-    "design-system/Availability.md",
-    "Best practices/Clean Code - SOLID.md",
     "Network/Protocol- IP, TCP, HTTP.md",
     "Network/IP.md",
     "Network/HTTP - TCP (What you understand about HTTP?).md",
@@ -175,14 +183,8 @@
     "Excalidraw/Drawing 2023-06-25 14.32.39.excalidraw.md",
     "Pasted Image 20230625152318_813.png.md",
     "2023-06-24 - Growing technically as an engineer.md",
-    "Database/3. SQL Language (best practice).md",
-    "Database/2. Database - Summary.md",
-    "Database/Database - Partitioning.md",
-    "Database/Database - Normalization.md",
-    "Database/Database - Locking.md",
     "Developer ROADMAPS.md",
     "Database/SQL.md",
-    "Database/NoSQL.md",
     "Pasted Image 20230625152318_813.png",
     "Pasted Image 20230625151551_356.png",
     "Network/assert",
