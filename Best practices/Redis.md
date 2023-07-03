@@ -33,7 +33,7 @@ Redis can be replicated to multiple-slave.
 > atomic command SETNX (SET IF NOT EXIST)
 - are used when multiple nodes in an application need to coordinate access to some shared resource
 - client needs to wait and retry if SETNX is not successful
-![[setnx-lock-redis.png]]
+![[../assets/setnx-lock-redis.png]]
 
 ## Rate limiter
 > Redis can be used as a rate limiter by using the increment command on some counters and expiration times on those counters.
@@ -65,12 +65,12 @@ Not read: [https://astikanand.github.io/techblogs/advanced-data-structures/skip-
 
 > It is a probabilistic data structure. - [Skip List | Set 1 (Introduction) - GeeksforGeeks](https://www.geeksforgeeks.org/skip-list/?ref=lbp)
 
-![[skip-list-1.png]]
+![[../assets/skip-list-1.png]]
 
 - The bottom layer is an ordinary ordered [linked list](https://en.wikipedia.org/wiki/Linked_list).
 - It will be searched from the highest level → after finding the position in the bottom layer it will make a coin flip to make a decision on what the level would be and add this value
 
-![[skip-list-2.gif]]
+![[../assets/skip-list-2.gif]]
 
 ### Advantages:
 - All operations O(log n).

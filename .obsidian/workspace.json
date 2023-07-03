@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "b7e5dbeea130c40d",
+        "id": "0cffd0bfda0aa1aa",
         "type": "tabs",
         "children": [
           {
-            "id": "b1b2574831aaa3a1",
+            "id": "34710119262c69f5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Best practices/Redis.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -145,9 +149,11 @@
   },
   "active": "685903b4a12a63da",
   "lastOpenFiles": [
+    "asserts/setnx-lock-redis.png.md",
+    "Best practices/Redis.md",
+    "asserts",
     "assets/skip-list-2.gif",
     "assets/skip-list-1.png",
-    "Best practices/Redis.md",
     "design-system/Caching.md",
     "design-system/0. Basic System design.md",
     "Database/1. Database Questions.md",
@@ -177,7 +183,6 @@
     "Developer ROADMAPS.md",
     "Database/SQL.md",
     "Database/NoSQL.md",
-    "design-system/gRPC vs REST.md",
     "Pasted Image 20230625152318_813.png",
     "Pasted Image 20230625151551_356.png",
     "Network/assert",
@@ -185,13 +190,11 @@
     "pdf/BestPractics-SQL.pdf",
     "pdf/Hands_On_Software_Architecture_with_Golang.pdf",
     "Excalidraw",
-    "pdf/The staff engineer's path_a guide for individual contributors navigating growth and change (2022).pdf",
     "Untitled.canvas",
     "Database/assets/normalize-violated-3NF.png",
     "Database/assets/normalize-resolved-3NF.png",
     "Database/assets/compare-cluster-non-cluster-index.png",
     "Database/assets/file-structure-database.png",
-    "Database/assets/logical-physical-representation.png",
     "Untitled 1.canvas"
   ]
 }
