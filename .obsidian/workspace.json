@@ -22,14 +22,12 @@
             }
           },
           {
-            "id": "cdb4f8d6324e31e6",
+            "id": "750e0aa48fd55981",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "excalidraw",
               "state": {
-                "file": "design-system/System Design for million requests.md",
-                "mode": "source",
-                "source": false
+                "file": "Excalidraw/board.excalidraw.md"
               }
             }
           }
@@ -100,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "design-system/System Design for million requests.md",
+                "file": "Excalidraw/board.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "design-system/System Design for million requests.md",
+                "file": "Excalidraw/board.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "design-system/System Design for million requests.md"
+                "file": "Excalidraw/board.excalidraw.md"
               }
             }
           }
@@ -162,11 +160,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "685903b4a12a63da",
+  "active": "750e0aa48fd55981",
   "lastOpenFiles": [
+    "design-system/System Design for million requests.md",
+    "Excalidraw/board.excalidraw.md",
     "design-system/Availability.md",
     "design-system/0. Basic System design.md",
-    "design-system/System Design for million requests.md",
     "assets/System-cache.png",
     "assets/system-proxy-cdn.png",
     "assets/system-lb-cdn.png",
@@ -174,7 +173,6 @@
     "assets/system-cdn.png",
     "Pasted image 20230708124859.png",
     "assets/Basic-system.png",
-    "Excalidraw/Drawing 2023-06-25 14.32.39.excalidraw.md",
     "Data-structure/B Tree, B+ Tree.md",
     "Database/Database - Indexing, Keys.md",
     "Data-structure",
