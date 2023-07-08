@@ -30,6 +30,7 @@ tags: Database, Indexing, Key, PK, Clustered index, Non-clustered index.
 ![](./assets/logical-physical-representation.png)
 
 ## B-Tree
+[[B Tree, B+ Tree]]
 **B-tree** is a type of tree data structure that contains 2 things namely: the Index Key and its corresponding disk address.
 - Index Key refers to a certain disk address
 - disk further contains rows or tuples of data

@@ -4,22 +4,37 @@
     "type": "split",
     "children": [
       {
-        "id": "51fd06354473a8c3",
+        "id": "1df922cf87dc8f2d",
         "type": "tabs",
         "children": [
           {
-            "id": "5cfe9a3c48533b98",
+            "id": "8dd2daf983b00f4b",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "design-system/System Design for million requests.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true
+            }
+          },
+          {
+            "id": "cdb4f8d6324e31e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Database/SQL.md",
+                "file": "design-system/System Design for million requests.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Database/SQL.md",
+                "file": "design-system/System Design for million requests.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Database/SQL.md",
+                "file": "design-system/System Design for million requests.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Database/SQL.md"
+                "file": "design-system/System Design for million requests.md"
               }
             }
           }
@@ -134,8 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5,
-    "collapsed": true
+    "width": 219.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,21 +162,35 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "5cfe9a3c48533b98",
+  "active": "685903b4a12a63da",
   "lastOpenFiles": [
+    "design-system/Availability.md",
+    "design-system/0. Basic System design.md",
+    "design-system/System Design for million requests.md",
+    "assets/System-cache.png",
+    "assets/system-proxy-cdn.png",
+    "assets/system-lb-cdn.png",
+    "assets/reversed-proxy.webp",
+    "assets/system-cdn.png",
+    "Pasted image 20230708124859.png",
+    "assets/Basic-system.png",
+    "Excalidraw/Drawing 2023-06-25 14.32.39.excalidraw.md",
+    "Data-structure/B Tree, B+ Tree.md",
+    "Database/Database - Indexing, Keys.md",
+    "Data-structure",
+    "assets/B+Tree.png",
+    "Developer ROADMAPS.md",
+    "Database/SQL.md",
+    "Database/Database - Locking.md",
+    "Database/3. SQL Language (best practice).md",
     "Database/NoSQL.md",
     "Database/Database - Transaction.md",
     "Database/Database - Partitioning.md",
     "Database/Database - Normalization.md",
-    "Database/Database - Locking.md",
-    "Database/Database - Indexing, Keys.md",
-    "Database/3. SQL Language (best practice).md",
     "Database/2. Database - Summary.md",
     "Database/1. Database Questions.md",
     "Best practices/Redis.md",
     "Best practices/Clean Code - SOLID.md",
-    "design-system/0. Basic System design.md",
-    "design-system/Availability.md",
     "design-system/Caching.md",
     "design-system/gRPC vs REST.md",
     "asserts/setnx-lock-redis.png.md",
@@ -173,30 +201,15 @@
     "Network/Protocol- IP, TCP, HTTP.md",
     "Network/IP.md",
     "Network/HTTP - TCP (What you understand about HTTP?).md",
-    "assets/HTTP.png",
-    "Network/0. Networking.md",
     "Best practices",
-    "assets/setnx-lock-redis.png",
     "assets/Untitled.png.crdownload",
     "assets",
     "design-system",
-    "Excalidraw/Drawing 2023-06-25 14.32.39.excalidraw.md",
-    "Pasted Image 20230625152318_813.png.md",
-    "2023-06-24 - Growing technically as an engineer.md",
-    "Developer ROADMAPS.md",
-    "Database/SQL.md",
-    "Pasted Image 20230625152318_813.png",
-    "Pasted Image 20230625151551_356.png",
     "Network/assert",
     "pdf/20 patterns coding.pdf",
     "pdf/BestPractics-SQL.pdf",
     "pdf/Hands_On_Software_Architecture_with_Golang.pdf",
-    "Excalidraw",
     "Untitled.canvas",
-    "Database/assets/normalize-violated-3NF.png",
-    "Database/assets/normalize-resolved-3NF.png",
-    "Database/assets/compare-cluster-non-cluster-index.png",
-    "Database/assets/file-structure-database.png",
     "Untitled 1.canvas"
   ]
 }
