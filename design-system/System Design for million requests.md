@@ -39,7 +39,7 @@ After that, we have a system like below.
 ![](../assets/system-lb-cdn.png)
 
 
-tags: Cache, In-Memory Cache, Distribution Cache, Round Robin, consistent hashing, LRU (Least Recent Use) , FIFO(First in First out) LFU(Least Frequently Use), Redis, HA
+keywords: Cache, In-Memory Cache, Distribution Cache, Round Robin, consistent hashing, LRU (Least Recent Use) , FIFO(First in First out) LFU(Least Frequently Use), Redis, HA
 
 ## Bottlenecks at Database
 > When the number of requests from servers is high, the system may still experience bottlenecks at the database levels.
@@ -60,4 +60,13 @@ We even combine 2 kind of caching and in multiple levels:
 Flow: get Cache from In-memory -> cache miss -> Get from Distribution - > Miss -> Get from DB.
 
 ![](../assets/System-cache.png)
-### 2. 
+### 2. Upgrade Database - Master & Slave
+#### a. Master & Slave
+#### b. Sharding
+![](../assets/Sharding-example.png)
+- Celerity problem: unbalanced condition -> using hash to reduce problem.
+- ![](Pasted%20image%2020230715132321.png)
+
+
+
+[Đĩ Nghiện Code Thuật Vấn Đáp cách xây dựng một website hàng triệu người dùng P3 (viblo.asia)](https://viblo.asia/p/di-nghien-code-thuat-van-dap-cach-xay-dung-mot-website-hang-trieu-nguoi-dung-p3-bJzKmArBK9N)

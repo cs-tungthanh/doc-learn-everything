@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "1df922cf87dc8f2d",
+        "id": "ff53e3e6c17fc3a7",
         "type": "tabs",
         "children": [
           {
-            "id": "8dd2daf983b00f4b",
+            "id": "b04657d57218127c",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "design-system/System Design for million requests.md",
+                "file": "Quick notes.md",
                 "mode": "source",
                 "source": false
-              },
-              "pinned": true
-            }
-          },
-          {
-            "id": "750e0aa48fd55981",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/board.excalidraw.md"
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Excalidraw/board.excalidraw.md",
+                "file": "Quick notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Excalidraw/board.excalidraw.md",
+                "file": "Quick notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/board.excalidraw.md"
+                "file": "Quick notes.md"
               }
             }
           }
@@ -160,24 +147,29 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "750e0aa48fd55981",
+  "active": "b04657d57218127c",
   "lastOpenFiles": [
+    "Pasted image 20230708145149.png",
+    "Pasted image 20230715132321.png",
     "design-system/System Design for million requests.md",
+    "assets/Sharding-example.png",
+    "Developer ROADMAPS.md",
+    "Quick notes.md",
+    "OAuth.md",
+    "2023-06-24 - Growing technically as an engineer.md",
+    "assets/System-cache.png",
+    "assets/system-cdn.png",
+    "assets/reversed-proxy.webp",
+    "assets/system-lb-cdn.png",
+    "assets/Basic-system.png",
     "Excalidraw/board.excalidraw.md",
     "design-system/Availability.md",
     "design-system/0. Basic System design.md",
-    "assets/System-cache.png",
     "assets/system-proxy-cdn.png",
-    "assets/system-lb-cdn.png",
-    "assets/reversed-proxy.webp",
-    "assets/system-cdn.png",
     "Pasted image 20230708124859.png",
-    "assets/Basic-system.png",
     "Data-structure/B Tree, B+ Tree.md",
     "Database/Database - Indexing, Keys.md",
     "Data-structure",
-    "assets/B+Tree.png",
-    "Developer ROADMAPS.md",
     "Database/SQL.md",
     "Database/Database - Locking.md",
     "Database/3. SQL Language (best practice).md",
@@ -193,12 +185,7 @@
     "design-system/gRPC vs REST.md",
     "asserts/setnx-lock-redis.png.md",
     "asserts",
-    "assets/skip-list-2.gif",
-    "assets/skip-list-1.png",
     "Database/0. Database.md",
-    "Network/Protocol- IP, TCP, HTTP.md",
-    "Network/IP.md",
-    "Network/HTTP - TCP (What you understand about HTTP?).md",
     "Best practices",
     "assets/Untitled.png.crdownload",
     "assets",
