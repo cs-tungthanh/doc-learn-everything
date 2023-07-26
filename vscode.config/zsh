@@ -1,0 +1,54 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# set theme zsh
+ZSH_THEME="myTheme"
+
+plugins=(
+	z
+	git
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+# alias
+alias cd..='cd ..'
+alias yi='yarn install'
+alias yc='yarn clean'
+alias yd='yarn dev'
+alias pi='pnpm install'
+alias pc='pnpm clean'
+alias pd='pnpm dev'
+
+alias gck='git checkout'
+alias cls='clear'
+alias py='python3'
+alias gps='git push origin $(current_branch)'
+alias gpl='git pull origin $(current_branch)'
+alias gck='git checkout'
+alias ga='git add'
+
+alias redis-start='docker run --name my-redis -p 6379:6379 -d redis:alpine'
+
+# source "$HOME/.zsh/spaceship/spaceship.zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+. /usr/local/opt/asdf/libexec/asdf.sh
+export PATH=$PATH:~/go/bin
+
+# pnpm
+export PNPM_HOME="/Users/tung/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

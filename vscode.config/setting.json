@@ -1,0 +1,23 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "terminal.integrated.fontFamily": "'Source Code Pro for Powerline', 'Hack Nerd Font'",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.fontSize": 12,
+    "editor.minimap.enabled": false,
+    "[proto3]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "clang-format.executable": "/usr/local/bin/clang-format",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": false,
+    "workbench.sideBar.location": "right",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
+}

@@ -85,7 +85,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CV Preparation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +101,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CV Preparation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +122,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "CV Preparation.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -147,27 +143,28 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "581a8eb10f82e4ea",
+  "active": "685903b4a12a63da",
   "lastOpenFiles": [
+    "vscode.config/zsh",
+    "vscode.config/shortcut.json",
+    "vscode.config/setting.json",
+    "vscode.config",
+    "vscode",
+    "CV Preparation.md",
+    "Config.json.md",
     "assets/not-processed/work/sample-answer-eng/conversation-interview.mp4",
     "assets/not-processed/work/sample-answer-eng/8.mp4",
     "assets/not-processed/work/sample-answer-eng/7.mp4",
     "assets/not-processed/work/sample-answer-eng/6.mp4",
     "assets/not-processed/work/sample-answer-eng/5.mp4",
     "assets/not-processed/work/sample-answer-eng/4.mp4",
-    "assets/not-processed/work/sample-answer-eng/3.mp4",
-    "assets/not-processed/work/sample-answer-eng/2.mp4",
-    "assets/not-processed/work/sample-answer-eng/1.mp4",
-    "assets/not-processed/work/tip-interview.mp4",
     "assets/not-processed/work/thankyou-email.JPG",
     "assets/not-processed/work/thanks-email-after-interview.PNG",
-    "assets/not-processed/work/sample-answer-eng",
     "assets/not-processed/work/message.jpeg",
     "assets/not-processed/work/leaving-message.JPG",
     "assets/not-processed/work/SystemDesign_Template.jpeg",
     "assets/career-objection.jpeg",
     "Quick notes.md",
-    "CV Preparation.md",
     "assets/not-processed/BinaryHeap2.jpeg",
     "assets/not-processed/test4.jpeg",
     "assets/not-processed/test3.jpeg",
@@ -194,7 +191,6 @@
     "Database/2. Database - Summary.md",
     "Database/1. Database Questions.md",
     "Best practices/Redis.md",
-    "Best practices/Clean Code - SOLID.md",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]
