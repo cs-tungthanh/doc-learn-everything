@@ -1,0 +1,1 @@
+1. What happen when you enter a website link in browser?

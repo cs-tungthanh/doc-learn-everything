@@ -5,6 +5,7 @@ tags: Database, Indexing, Key, PK, Clustered index, Non-clustered index.
 - [Clustered Indexing](https://use-the-index-luke.com/sql/clustering)
 - [Deep look DB Indexing](https://www.freecodecamp.org/news/database-indexing-at-a-glance-bb50809d48bd/?fbclid=IwAR3gjMn8obtAzayqOc-KlEqyrnotxz2WRSjyy3_C_xKFDKGBGio-LHEOtwU)
 - [Composite Index](https://sqlhints.com/tag/composite-index-used-only-if-leading-column-is-in-the-where-clause/)
+- [Things every developer absolutely, positively needs to know about database indexing - YouTube](https://www.youtube.com/watch?v=HubezKbFL7E)
 
 # Note
 - **Indexing** → care about the distinct value of the column
