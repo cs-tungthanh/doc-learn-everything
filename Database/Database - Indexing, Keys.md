@@ -158,7 +158,7 @@ In this engine, there
 - Add a **secondary index** to column **Name.**
 
 **Clustered Index:**
-In BTree →Build based on **PK** (là column ID) → each node will store all data of a row
+In B-Tree → Build based on **PK** (column ID) → each node will store all data of a row
 Id = 1 -> Name, Age, Column 4
 Id = 2 -> Name, Age, Column 4
 
@@ -251,3 +251,8 @@ Both indexes have the same physical structure and are stored in the MySQL server
 The indexes other than PRIMARY indexes (clustered indexes) are called non-clustered indexes.
 The non-clustered index and table data are both stored in different places.
 ![[compare-cluster-non-cluster-index.png]]
+
+
+
+
+
