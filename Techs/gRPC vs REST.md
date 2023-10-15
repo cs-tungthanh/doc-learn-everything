@@ -23,3 +23,13 @@ Actually, you should consider your specific needs of your application.
 
 
 
+|GraphQL|REST|
+|---|---|
+|Chỉ là 1 ngôn ngữ truy vấn APIs|Là 1 khái niệm, 1 loại kiến trúc phần mềm định nghĩa 1 số ràng buộc, quy tắc cần tuân theo khi design web services|
+|Chỉ deploy 1 endpoint duy nhất và client có thể quyết định lấy resource nào họ cần|Deploy nhiều endpoints và mỗi endpoints thông thường trả về 1 resource duy nhất|
+|Sử dụng kiến trúc hướng tới phía client|Sử dụng kiến trúc hướng tới phía server|
+|Ko có cơ chế caching đc tích hợp sẵn → phải dùng lib bên ngoài|có tính năng cache mặc định|
+|Ko hỗ trợ API versioning|support|
+|only JSON|XML, JSON, YAML, …|
+|Có định nghĩa kiểu dữ liệu rõ ràng và document tạo tự động|No|
+
