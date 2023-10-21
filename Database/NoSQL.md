@@ -37,3 +37,10 @@ Note: The team field contains the embedded document.
 ```
 
 **A MongoDB database is created** when the first document is **inserted** into a collection.
+
+
+# The benefit of using Mongodb?
+**Why mongodb could be horizontal scaling?**
+- <ins>NoSQL are ideal for distributed </ins> network application over SQL database. Because they are horizontal scaling, unlike vertically scaling SQL. That why NoSQL used in BigData,...
+- MongoDB is <ins>document oriented</ins>, data often not span accross table, it will be <ins>denormalized</ins> into single document --> make query fetch document very quickly & don't necessary to joining between multiple tables
+- MongoDB use <ins>sharding strategy</ins>, which is horizontal scaling, split a large collection into mulitple shards --> we would parallel query and then joining total result and return --> This is keypoint over SQL database, when data is incremented <ins>too large would make SQL query slowly</ins>
