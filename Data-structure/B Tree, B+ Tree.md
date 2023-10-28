@@ -30,3 +30,12 @@ All those operations can be performed in **O(Log N)** time.
 - Lookup requires a path from root -> a leaf
 	- All data access operations take a consistent time.
  ![](B+Tree.png)
+
+ # Compare B Tree and B+ Tree
+ ## Overview lookup process
+- Both records and index table are stored <ins>on disk storage</ins>, when querying occur. Firstly, it fetch index table into in-memory to processing as well compare with filter. Then it fetch each index block until find expected records (hold reference to that record) and finally fetch that records from disk and return.
+- Each node in Btree is stored inside <ins>a block</ins> and our query will fetch sequentially each block from disk (not all block of index table)
+ ### Which B+ tree over B tree?
+ - B+ tree doesn't hold document reference in intermediate node, it only store reference in leaf node. This feature lead to several benefits:
+	- Intermediate node have more space to store index key, make our tree **shallower**, so the number of index block fetch from disk will be reduced (reduced I/O operation) --> increase performance
+	- Leaf node have linked together --> make range query more efficient 
