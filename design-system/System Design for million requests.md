@@ -65,7 +65,7 @@ Flow: get Cache from In-memory -> cache miss -> Get from Distribution - > Miss -
 #### b. Sharding
 ![](../assets/Sharding-example.png)
 - Celerity problem: unbalanced condition -> using hash to reduce problem.
-- ![](Pasted%20image%2020230715132321.png)
+- ![](SystemExample.png)
 
 
 

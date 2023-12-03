@@ -28,6 +28,7 @@ There are 4 properties:
 3. **I - Isolation:** means all transactions run at the same time (concurrently) and should not affect each other.
 	-> The effect of concurrent transactions: **Dirty read**, **Non-repeatable read**, **Phantom read**
 4. **D - Durability:** Once a transaction is committed or is successful → the data are written must stay in persistent storage and **CANNOT BE LOST** event in case of system failures.
+		- Example: Leader-based replication is async replication -> If a leader failed and isn't recoverable, any write that haven't yet been replicated to follower would be lost => Write isn't guarantee **DURABLE**
 
 # Transaction Isolation
 [transaction isolation levels](https://dev.mysql.com/doc/refman/8.0/en/innodb-transaction-isolation-levels.html)
@@ -155,9 +156,41 @@ The number is the order when run this query
 # Distributed Transaction
 
 There are 2 variants of distributed transactions:
-1. Master-slave → we want to update a piece of data in multiple nodes → a transaction needs to update all of them in an atomic way
-2. Partitioned database: where different pieces of data reside in different nodes and need to be updated atomically.
+1. **Master-slave** → we want to update a piece of data in multiple nodes → a transaction needs to update all of them in an atomic way
+2. **Partitioned database**: where different pieces of data reside in different nodes and need to be updated atomically.
 For instance, a financial application may use a partitioned database for customers' accounts,
 - where the balance of user A resides in node n1.
 - In contrast, the balance of user B resides in node n2
 - → we want to transfer some money from user A to user B. We need to do this in an atomic way so that data is not lost (i.e., removed from user A, but not added to user B, because the transaction fails midway).
+
+# 1. Consistency Model
+> The view of data at a given point in time
+> ![](../assets/consistency-models.png)
+> 
+## 1.1. Eventual Consistency
+> The weakness consistency model
+
+### Scenario
+1. Initially, the value of x is 2
+2. At time T1, Alice sends a write request to update the value of x to 10
+3. The system saves the updated value of x
+5. At time T2, Alice and Bob read the value of x
+6. The system returns the same value (2) to both read requests, but the value is old
+7. At time T3, system reaches the stable state and returns the latest value to both read requests
+
+
+## 1.2. Causal consistency
+### How it works
+- categorizing operation into **dependent** and **independent** operations
+	- **Dependent**: are also called causally-related operations
+		- > Causal consistency preserve the order of causally-related operations
+	- **Independent**: 
+		- This model doesn’t ensure ordering for the operations that are not causally related. These operations can be seen in different possible orders.
+#### Use case
+- is used in a commenting system: reply to a comment on FB post
+- It’s used to prevent non-intuitive behaviors.
+
+## 1.3. Sequential consistency
+
+
+## 1.4. Strict consistency aka linearizability

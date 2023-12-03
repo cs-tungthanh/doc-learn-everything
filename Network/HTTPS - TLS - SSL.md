@@ -33,8 +33,12 @@ Ref:
 
 **SSL (Secure Socket Layer)** is a standard technology for establishing an **encrypted link** between a server and a client (browser).
 More specification: SSL is a security protocol that describes how algorithms should be used.
+**SSL** refers to secure Socket layer, used to encrypt connection
+**TLS** refers to Transport Layer security
 
-**CAs:** Central Authentication Service is a single sign-on protocol for the web.
+- Public SSL certificates are issued by CA
+	- is a task for Load Balancer
+**CA:** Central Authentication Service is a single sign-on protocol for the web.
 
 **How does it work?**
 - Step 1: Establish an SSL connection by using a process called **SSL Handshake**

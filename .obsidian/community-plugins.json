@@ -3,5 +3,6 @@
   "obsidian-icon-folder",
   "obsidian-mind-map",
   "obsidian-linter",
-  "obsidian-table-generator"
+  "obsidian-table-generator",
+  "obsidian-plugin-toc"
 ]

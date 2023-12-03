@@ -4,29 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "e7bcdff5c04770d4",
+        "id": "2c043bc309c67471",
         "type": "tabs",
         "children": [
           {
-            "id": "3ef525d2efde3fe1",
+            "id": "8c89ed9aa2d632ad",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TodayILearn.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a816a6d9742528a0",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "assets/thankyou-email.JPG"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -58,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Load Balancingpath",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TodayILearn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TodayILearn.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "TodayILearn.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,53 +149,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "685903b4a12a63da",
+  "active": "8c89ed9aa2d632ad",
   "lastOpenFiles": [
-    "Interview.md",
-    "Best practices/Redis.md",
+    "AWS/SAA-C03-Exams/saa_c03_exam.md",
+    "AWS/SAA-C03-Exams/images/question563.jpg",
+    "AWS/SAA-C03-Exams/images",
+    "AWS/SAA-C03-Exams/SAA_exam.md",
+    "AWS/SAA-C03-Exams",
+    "AWS/SAA-C03-Exams-Questions-Answers/SAA_exam.md",
+    "AWS/AWS - SAA.md",
+    "AWS/SAA-C03-Exams-Questions-Answers/README.md",
+    "assets/SNI-example.png",
     "Network/HTTPS - TLS - SSL.md",
-    "assets/https-ssl.png",
+    "Database/Database - Transaction.md",
+    "design-system/0. Basic System design.md",
+    "Database/assets/consistency-models.png",
+    "TodayILearn.md",
+    "SystemExample.png",
+    "design-system/System Design for million requests.md",
+    "Interview.md",
+    "Developer ROADMAPS.md",
+    "CV Preparation.md",
+    "design-system/Availability.md",
+    "design-system/Caching.md",
+    "design-system/OAuth.md",
+    "assets/EBS-ex1.png",
+    "assets/ENI-MoveIP.png",
+    "assets/Partition-placement-ec2.png",
+    "assets/Spread-Placement-EC2.png",
     "Network/Protocol- IP, TCP, HTTP.md",
+    "assets/not-processed/test1.jpeg",
+    "assets/not-processed/TPS-test2.jpg",
+    "AWS",
+    "Database/2. Database - Summary.md",
+    "Database/Database - Partitioning.md",
+    "Database/3. SQL Language (best practice).md",
+    "Quick notes.md",
+    "Database/Database - Indexing, Keys.md",
+    "Techs/Golang.md",
+    "Best practices/Redis.md",
     "Network/HTTP - TCP (What you understand about HTTP?).md",
     "Techs/Security(hash, encrypt,..).md",
-    "assets/PKI_with_DigitalSignature.png",
     "assets/PKI_with_DigitalSignature.png.crdownload",
-    "Best practices/Clean Code - SOLID.md",
-    "Techs/gRPC vs REST.md",
-    "CV Preparation.md",
-    "assets/thankyou-email.JPG",
-    "assets/not-processed/work/leaving-message.JPG",
     "assets/not-processed/work/kyber_test.pdf",
     "assets/not-processed/work/bí-kiếp-pv.mov",
-    "assets/not-processed/work/thanks-email-after-interview.png",
-    "assets/not-processed/work/message.jpeg",
     "assets/not-processed/work/Best-git-repo.mp4",
-    "assets/not-processed/BinaryHeap2.jpeg",
-    "assets/not-processed/BinaryHeap1.jpeg",
-    "assets/not-processed/test2.jpeg",
-    "assets/not-processed/test1.jpeg",
-    "design-system/0. Basic System design.md",
-    "design-system/OAuth.md",
-    "Techs/REST.md",
-    "Growing technically as an engineer.md",
-    "Quick notes.md",
-    "Techs/Event Loop in javascript.md",
     "Techs",
-    "Database/2. Database - Summary.md",
-    "Database/Database - Locking.md",
-    "Database/Database - Partitioning.md",
-    "Database/Database - Transaction.md",
-    "Database/3. SQL Language (best practice).md",
-    "Database/1. Database Questions.md",
-    "TodayILearn.md",
     "pdf/System Design-TheBigArchive.pdf",
     "pdf/System Design Interview.pdf",
-    "Fleet Planning.md",
-    "Database/Database - Indexing, Keys.md",
-    "pdf/The staff engineer's path.pdf",
-    "pdf/The staff engineer's path_a guide for individual contributors navigating growth and change.pdf",
-    "Excalidraw/board.excalidraw.md",
-    "pdf/Designing_data-intensive_applications_martin_kleppmann.pdf",
     "Untitled.canvas",
     "Untitled 1.canvas"
   ]

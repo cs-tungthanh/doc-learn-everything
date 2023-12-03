@@ -10,5 +10,6 @@ tags: availability, HA
 
 # Design High Availability
 > You need to reduce or eliminate **single points of failure**. 
-
+- Seamlessly handle system failure.
+- 
 # SLAs - Service Level Agreement.
