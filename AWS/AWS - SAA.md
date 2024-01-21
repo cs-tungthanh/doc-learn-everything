@@ -193,7 +193,7 @@ It is a virtual network interface, providing network capabilities to EC2 instanc
 
 
 
-## EBS - Elastic Block Storage
+## EBS - Elastic Block Storage - single instance application
 > Is a network drive (not a physical drive) -> attach to an instances while they run
 > EBS Volumes are a kind of network attached storage
 
@@ -218,15 +218,17 @@ You can attach a Volume to any EC2 Instance in the same Availability Zone, then 
 - We can copy a EBS Snapshot to any regions
 - Can create volume from a snapshot
 
-## EFS - Elastic File System
+## EFS - Elastic File System - distributed apps
 > It is something like volume mounted to an instance
-- EFS is a network file system (NFS) that allows you to mount the same file system on EC2 instances that are in different AZs.
+- **EFS** is a network file system (NFS) that allows you to mount the same file system to n of EC2 **instances** that are in different AZs.
 	- You have a fleet of EC2 instances distributes across AZs that process a large data set. What do you recommend to make the same data to be accessible as an NFS drive to all of your EC2 instances? -> EFS
 
-- Use EBS
-    
-- Use EFS
-    
+
+- Use EBS - can only attach to one instance at a time (created on 1 AZ)
+- Use EFS - multi instances
+![](../assets/EBS_EFS_compare.png)
+
+-
 - Use an Instance Store
 - EFS works with EC2 instance in **multi-AZ**
 - HA, scalable, expensive (higher than EBS), pay per use
@@ -235,7 +237,7 @@ You can attach a Volume to any EC2 Instance in the same Availability Zone, then 
 	- share website file (static files,..)
 	- 
 
-## EC2 Instance Store
+## EC2 Instance Store 
 - EBS volumes are network drives with good but **limited** performance
 - If we need **a high performance hardware disk** -> use EC2 Instance Store
 	- Better I/O performance
@@ -255,13 +257,22 @@ When you launch an instance on EC2, Amazon has to look for a physical server tha
 
 
 
-
+	
 ## AMI - Amazon Machine Image
 - It is actually a snapshot of an existing EC2 instance, AMI are a customization of an EC2 instance.
 - We can create AMI from an EC2 instance to save the current state, setting, installed apps,... to an image and can launch it in the future.
 - AMIs are built for a specific AWS Region - but you can copy the AMI to target Region and then launch EC2 instances.
 
-# III. Load Balancer
+
+**How we can speed up EC2 Instantiating Process?**
+- EC2 Instance
+	- Using AMI: Install OS deps, your app,... beforehand and launch EC2 instance from the AMI
+	- Using EC2 user data: for dynamic configuration
+	- Hybrid: AMI and user data
+- RDS: restore from snapshot
+- EBS: restore from snapshot - the disk will already be formatted and have data
+
+# III. Load Balancer 
 There're 2 type of Load balancer
 - At Layer 4 (Transport) - using TCP, UDP to manage traffic
 - At Layer 7 (App Layer) - make decision based on info in header
@@ -331,9 +342,179 @@ Your boss asked you to scale your Auto Scaling Group based on the **number of r
 
 
 # IV. Database
+Tricks:
+- In a **stopped** RDS DB, you'll still pay for storage. If you plan for stopping it for a long time (ex: only use 2 days/month,...), you should snapshot and restore instead
+- How do you encrypt an unencrypted RDS DB instance
+	- Create a snapshot of the unencrypted RDS DB instance, copy the snapshot and tick **"Enable encryption"**, then restore the RDS DB instance from the encrypted snapshot
+- When you have an un-encrypted RDS DB - you **CANNOT** create **encrypted** Read Replicas
+- If you need to create long term backups for Aurora DB  => should perform on DEMAND backups 
+- If you want to test in your production db -> you can use Aurora Cloning to create test db.
+- Which RDS **(NOT Aurora)** feature when used does not require you to change the SQL connection string?
+	- Multi-AZ -> SQL conn str will not change
+	- Read Replicas -> add new endpoints with their own DNS name. We need to change our application to reference them individually to balance the read load.
+- Which of the following statement is true regarding replication in both RDS Read Replicas and Multi-AZ?
+	- Read Replica uses Asynchronous Replication and Multi-AZ uses Synchronous Replication
+- 
 ## RDS
 
+### RDS multi AZ - Disaster Recovery
+- SYNC replication
+- One DNS name - automatic app failover to standby
+- Increase Availability
+- failover in case of loss of AZ, loss of network, instance or storage failure
+- No manual intervention in apps
+- Not used for scaling
+
+### RDS Proxy
+- Allow Apps to pool and share DB Connections established with the DB.
+- Fully serverless, autoscaling, HA (multi-AZ)
+- Reduced RDS & Aurora failover time up to 66%
+	- Failover is backup operational mode (a procedure to handle fault or failure)
+- Never publicly available (must be accessed from VPC)
+
+## Aurora
+
+
 # Elastic Cache
+| Redis                                    | Memcached                                      |
+|------------------------------------------|------------------------------------------------|
+| Multi AZ with Auto-Failover              | Multi-node for partitioning of data (sharding) |
+| Read Replicas to scale reads and have HA | No HA (no replication)                         |
+| Data durability by using AOF persistence | Non persistent                                 |
+| Backup and restore feature               | No backup and restore                          |
+| Support Sets and Sorted sets             | Multi-threaded arch                            |
+- Redis is really for HA, backup, read replicas
+- Memcached is a pure cache that's distributed. Your data can be lose, no HA
+
+
+# DNS
+![](../assets/URL-DNS.png)
+- TLD: Top level domain
+- SLD: Second level domain
+![](../assets/DNS-Howitwork.png)
+
+## Route 53
+- 100% HA (SLA), fully managed and Authoritative DNS
+	- Authoritative = customer can update DNS Record
+- is Domain Registrar
+- Ability to check health of your resources
+- 
+## DNS Record
+- Domain name
+- Record Type
+	- A: maps a hostname to IPv4
+	- AAAA: maps a hostname to IPv6
+	- CNAME: maps a hostname to another hostname (only for non-root domain)
+	- Alias: maps a hostname to an AWS Resource (root and non-root)
+		- example.com -> alb-123.us-east.elb.amazonaws.com
+	- NS: Named server
+- Value: Ip value
+- Routing policy: how route 53 response to queries
+	- Simple: 
+		- route traffic to a single resource
+		- can specify multi-values in the same record - it will be chosen randomly by client
+	- weighted
+		- we can route 30% traffic to IP 1 and 70% traffic to IP 2
+		- Weighted Routing Policy allows you to redirect part of the traffic based on weight (e.g., percentage). It's a common use case to send part of traffic to a new version of your application.
+	- Latency
+		- redirect to the resource that has the least latency close to us
+- TLS: time to live the amount of time the record cached at DNS Resolver.
+
+You have purchased a domain on **GoDaddy** and would like to use Route 53 as the DNS Service Provider. What should you do to make this work
+- Create a Public Hosted Zone and update the 3rd party Registrar NS records
+- Public Hosted Zones are meant to be used for people requesting your website through the Internet. Finally, NS records must be updated on the 3rd party Registrar.
+
+
+
+# S3
+S3 bucket names are [globally unique](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), each bucket is stored in a Region
+- Best practice: 
+	- access (EC2,..) in the same region for reducing latency and data transfer costs
+
+- S3 Get Byte Range Fetch 
+	- you can fetch a byte-range from an object, transferring only the specified portion
+	- Use case: indexing s3 objects in rds
+		- create app that get byte range(first n bytes) and store that information in RDS
+- S3 Replication
+	- same region
+	- cross region
+	- Only replicate Delete Maker - cannot replicate Delete object
+- How to prevent accidentally remove on s3
+	- versioning
+	- MFA for delete operation
+- S3 Event
+	- Event: ObjectCreated/Removed/Restore/Replication
+		- Direct deliver to: SNS, SQS, Lambda
+		- Delivery through EventBridge to aws services
+	- **Simple Use Cases:** For straightforward scenarios where you only need to send events to SNS, SQS, or Lambda, direct delivery might suffice.
+	- **Complex Workflows:** For more intricate event-driven architectures, advanced features, or broader integrations, EventBridge is often the preferred choice.
+	- ![](../../assets/s3_event_2_eventbridge.png)
+- S3 Lifecycle Rules
+	- Expiration Rule
+	- Transition Rule
+	- Use case: use Lifecycle Policy to automate old/unfinished parts deletion
+	- How can you analyze the optimal number of days to move objects between different storage tiers?
+		- Using S3 Analytics
+- S3 - Requester Pays
+	- ![](../../assets/s3_requester_pay.png)
+- S3 Performance
+	- Multi-part upload: - parallelize uploads 
+		- recommend file >100MB
+		- must use for file > 5GB
+	- S3 transfer acceleration: optimize transfer operation caused by distance. 
+		- increase transfer speed by transferring to AWS Edge location which will forward to S3  in the target region
+- S3 Select 
+	- ![](../../assets/s3_select.png)
+## S3 Encryption
+- **SSE-S3** (default)
+	- Encryption Happen in AWS
+	- Keys are Managed by AWS S3 (owned by AWS) - no control
+- **SSE-KMS**:
+	- Encryption Happen in AWS
+	- Key stored in AWS (KMS) - but we have full-control over the rotation policy of encryption key
+- **SSE-C**: encryption with customer-provided key
+	- Encryption happens in AWS 
+	- **CLIENT** have full control over the encryption keys.
+- **Client-side encryption**
+	- when company don't trust encryption in AWS they will do its own.
+
+## S3 Access point
+
+![](../assets/s3-access-point.png)
+![](../assets/s3_access_point_vpc.png)
+
+### S3 Object Lambda Access Point
+We will have a bucket to ingest raw data and create another S3 Object Lambda access point to consume data without creating another bucket
+
+![](../assets/s3_object_ap_lambda.png)
+- 
+## S3 QA
+1. For compliance reasons, your company has a policy mandate that database backups must be retained for 4 years. It shouldn't be possible to erase them. What do you recommend?
+	- Glacier Vaults with Vault Lock Policies
+2. S3 Object lock - A company has its data and files stored on some S3 buckets. Some of these files need to be kept for a predefined period of time and protected from being overwritten and deletion according to company compliance policy. Which S3 feature helps you in doing this?
+	- S3 Object Lock - Retention Compliance Mode
+3. Which of the following S3 Object Lock configuration allows you to prevent an object or its versions from being overwritten or deleted indefinitely and gives you the ability to remove it manually?
+	- Legal Hold
+4. 
+
+## CORS
+- Cross origin resource sharing: defines a way for client web applications that are loaded in one domain to interact with resources in a different domain
+- Origin = scheme (protocol) + host (domain) + port
+- Web browser based mechanism to allow requests to other origins while  visiting origin.
+- using: CORS header 
+- ![](../../assets/cors-example.png)
+
+- Example in S3
+- ![](../assets/s3-cors.png)
+	- step1: user get index.html from bucket-html
+	- step2: inside index.html that contains image from bucket assets -> so web browser need to get image with origin of html to get image
+
+
+
+
+
+
+
 
 
 I'm going to do a deep dive in all of those over time
@@ -343,3 +524,5 @@ Let's have a look into each of these ... in detail
 
 
 
+
+It's up to you as SA to really understand trade-offs for doing and why you're doing things and cost implication of what you're doing

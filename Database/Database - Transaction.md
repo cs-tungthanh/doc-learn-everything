@@ -17,9 +17,11 @@ The properties of the transaction can be summarized as ACID Properties.
 ********************What is a transaction?******************** It is a unit of work that represents a change composed of multiple operations.
 
 ### What is ACID?
+![ACID Overview - ByteByteGo](ACID-Overview.png)
+
 **ACID** is _a standard set of properties_ that guarantee the DB operations are processed reliably.
 There are 4 properties:
-1. **A - Atomicity**: we can consider all operations in a transaction as ONE operation
+1. **A - Atomicity**: we can consider all operations in a transaction as ONE operation (ALL or NOTHING)
     → either all of the operations are completed successfully or none of them take effect.
     → That means if one of them fails, everything will be rolled back → DB is unchanged.
 2. **C - Consistency:** DB state (a storage system) should remain in a valid state after a transaction is executed
@@ -194,3 +196,19 @@ For instance, a financial application may use a partitioned database for custome
 
 
 ## 1.4. Strict consistency aka linearizability
+
+
+
+## Replication Lag - Eventual consistency
+Replication Lag can be solved partially with: Monotonic Read
+### Monotonic Read
+**Scenario:**
+- User A make a write request: Insert id = 2
+- **Leader** return OK, and replicated to **Follower-1**, and in progress to replicate to **Follower-2**
+- at t1 time, User B read where id = 2 from Follower-1 and get result
+- at t1 + 2 time, User B read again from Follower-2 and no result response
+	- -> That makes confusing to user B because progress to replicate to Follower-2 is still in processing
+
+**Solution:**
+- **Monotonic Read** make sure that each user always makes their read from the same replica (diff users can read from diff replicas)
+	- ex: replica can be chosen based on hash of userID rather than randomly, if replica fails the query will need to be routed to another replica.

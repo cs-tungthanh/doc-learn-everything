@@ -11,10 +11,8 @@
 - **Integers** are typically stored with either 4 or 8 bytes
 
 ### Why JSON?
-
-- human-readable - lightweight format
-- simple - the data can only be text.
-- **easy to parse and easy to create**
+- human-readable - lightweight format - simple - the data can only be text
+- **simple for machine to parse and create**
 - It can be accessed by multiple platforms.
 - JSON is a language-independent data format. This means that a JSON document can be used with any programming language.
 
