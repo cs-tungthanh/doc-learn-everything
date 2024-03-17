@@ -175,18 +175,43 @@ aws configure
 4. 
 
 ## VPC - Virtual Private Cloud
-## ENI - Elastic Network Interface
-It is a virtual network interface, providing network capabilities to EC2 instances. Allow them to communicate with other resources within a VPC
+- 1 VPC can attach resources on multi-AZ
+- 1 VPC is bounded to 1 Region
+- 1 AWS Account -> maximum 5 VPC
+- 1 VPC -> create multi Subnets. Each Subnet will be on 1 AZ
+Purpose: 
+- Isolated Network env (dev|stg|prod)
+- but if we want to isolate resource visibility, we must use multi account (user cannot see resource on diff env)
+### Subnet
+> 1 Subnet is bounded to 1 AZ
+- Public Subnet: serve user
+- Private Subnet: internal services
+Example: 3-tier web app we usually create 3 subnets
+- 1 public subnet: serve request from user
+- 1 private subnet: application service
+- 1 private subnet: Database
+
+### ENI - Elastic Network Interface
+It is a virtual network interface, providing network capabilities to EC2 instances. 
+- Khi ta tạo 1 máy ảo (EC2,..) muốn máy này dùng đc trong VPC ta phải có 1 card mạng ảo 
+- 1 EC2 can attach multi ENI
+	- when we attach ENI to another EC2 3 Addresses will not change: IP Private, Elastic IP Address (EIP), MAC
+	- EIP is static IPv4
+
+Allow them to communicate with other resources within a VPC
 > Can create independently and attach to an EC2 instance
 > Purpose: to create primary private IPv4, one or more secondary IPv4
 - One Elastic IPv4 per private IPv4
 - On public IPV4
 - One or more Security Group
 - A Mac Address
-- Bound to a specific AZ
 - Can move between EC2 in stances for failover purpose
-- *Elastic Network Interface (ENI) can NOT be attached to EC2 instances in another AZ.*
-	- Elastic Network Interfaces (ENIs) **are bounded to a specific AZ**. You can not attach an ENI to an EC2 instance in a different AZ.
+- Elastic Network Interfaces (ENIs) **are bounded to a specific AZ**. You can not attach an ENI to an EC2 instance in a different AZ.
+
+- Khi chuyển sang một máy chủ mới, một card mạng ảo sẽ vẫn duy trì:
+	- Địa chỉ IP Private
+	- Địa chỉ Elastic IP address
+	- Địa chỉ MAC
 - ![](../../assets/ENI-MoveIP.png)
 
 
@@ -425,9 +450,41 @@ You have purchased a domain on **GoDaddy** and would like to use Route 53 as t
 - Public Hosted Zones are meant to be used for people requesting your website through the Internet. Finally, NS records must be updated on the 3rd party Registrar.
 
 
+# Storage Comparison
+- S3: Object Storage 
+- S3 Glacier: Object Archival
+- EBS: Network storage for one EC2 at a time
+- Instance Storage: Physical storage for EC2 with high IOPS
+- EFS: Network file system for linux instance, POSIX filesystem
+- FSx for Window: file system for window
+- FSx for Lustre: high performance computing for linux file system 
+- Fsx for NetApp ONTAP: High OS compatibility 
+- Fsx for OpenZFS:Manage ZFS filesystem
+- Storage Gateway: hybrid cloud (on-premises <-Gateway-> AWS Cloud)
+	- S3 & FSx File Gateway
+		- low-latency access (caching at gateway)
+	- Volume gateway
+	- Tap gateway
+- Transfer Family: FTP, FTPS, SFTP interface on top of S3 and EFS
+- DataSync: synchronize data from on-premises to AWS, AWS -> AWS
+	- Ex: migrate from S3 -> EFS
+	- AWS DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and AWS Storage services, as well as between AWS Storage services.
+- SnowBall, Snowball, SnowMoblie: **move** large amount of data to the cloud **physically**
+	- Snowball Edge: allows to pre-process data while moving into Snowball
+	- **AWS Data Migration:** This service is generally used for smaller-scale data migrations and wouldn't be as efficient for transferring hundreds of Terabytes.
+- Database: Mysql, Postgres,...
 
+# FSx - Filesystem
+1. Scratch File System
+	- **temporary storage**
+2. Persistent File System
+	- **Long-Term Storage**
+	- Replication within mutli-AZ
 # S3
 S3 bucket names are [globally unique](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), each bucket is stored in a Region
+S3 Glacier: -> Object Archival
+- use s3 lifecycle rule to transition data to tap storage(S3 glacier)
+
 - Best practice: 
 	- access (EC2,..) in the same region for reducing latency and data transfer costs
 
@@ -510,10 +567,48 @@ We will have a bucket to ingest raw data and create another S3 Object Lambda acc
 	- step2: inside index.html that contains image from bucket assets -> so web browser need to get image with origin of html to get image
 
 
+# CloudFont - CDN  - Layer 7 (app)
+- Cache Service: improve performance for both cacheable content (image, video,...)
+	- use global network of edge locations (data centers)
+- is a global service
+	- the cost of data out is vary for each edge location
+	- we can reduce the number of edge to reduce cost
+- DDOS Protection 
+- We can perform passing **CloudFont Invalidation** to force remove cache (file/*, *,...)
+- Use CloudFont Geo Restriction to restrict ip by country
+- ![](CF-Origins.png)
+
+![](CF_Example.png)
+
+- Because the Edge Location is public so we need create a security group to route traffic to EC2 (it make EC2 become public)
+![](CF_ALB_EC2.png)
+![](AWS_Accelerator_vs_CF.png)
+### OAC - Origin Access Control
+- OAC prevents direct, public access to your S3 bucket. Users can only access your content through the designated CloudFront distribution.
+
+You have a static website hosted on an S3 bucket. You have created a CloudFront Distribution that points to your S3 bucket to better serve your requests and improve performance. After a while, you noticed that users can still access your website directly from the S3 bucket. You want to enforce users to access the website only through CloudFront. How would you achieve that?    
+- Configure your CloudFront Distribution and create an Origin Access Control (OAC), then update your S3 Bucket Policy to only accept requests from your CloudFront Distribution.
+# AWS Global Accelerator - layer 4 (transport)
+- Focuses on **routing traffic** to the best endpoint for each user, improving **availability and performance** by reducing latency.
+	- Which AWS service can help you to assign a static IP address and provide low latency across the globe? -> **AWS Global Accelerator** 
+- **CloudFront:** Focuses on **caching and delivering content** from your origin server, improving **page load times and reducing bandwidth usage**.
 
 
+# AWS DataSync
+
+![](aws-datasync.png)
 
 
+# SQS
+## Security
+- In-flight encryption using HTTPS
+- At rest encryption using KMS keys
+- Client-side encryption if the clients want to perform en/decryption itself
+## Access control
+- IAM policies to regulate access to SQS
+- SQS Access Policy (similar to S3 bucket policy)
+	- useful for cross-account 
+	- useful for other service to write into SQS
 
 
 

@@ -83,3 +83,12 @@ Not read: [https://astikanand.github.io/techblogs/advanced-data-structures/skip-
 - Can’t reverse
 - searching is slower than a linked list.
 - Not cache because they don’t optimize the locality of reference.
+
+## Redis Blocking vs Non-Blocking Command
+- Both `SCAN` and `KEYS` are blocking commands. When you execute either command, the Redis server will be occupied with processing the request until it finishes. During this time, other requests from your application or other clients will be queued and wait for the current operation to complete.
+### Key Difference - Approach:
+- **`KEYS`:** Scans the entire key-space in Redis to find all keys matching a specific pattern (if provided) or retrieves all keys if no pattern is specified. This can be a time-consuming operation, especially for large datasets, blocking the connection for an extended period.
+- **`SCAN`:** Allows iterative retrieval of keys based on a pattern. It returns a cursor and a limited set of keys in each iteration. You can continue calling `SCAN` with the cursor until all elements are retrieved. This approach breaks down the retrieval process into smaller chunks, minimizing the blocking time for each iteration.
+	- **Reduced Blocking Time:** `SCAN` minimizes the overall blocking time compared to `KEYS`, which retrieves everything in one go.
+	- **Memory Efficiency:** `SCAN` doesn't require loading the entire list of keys into memory at once.
+	- **Scalability:** `SCAN` scales better as your dataset size grows.

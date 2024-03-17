@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "64ff02134cef54c6",
+        "id": "29b0b03a599331e7",
         "type": "tabs",
         "children": [
           {
-            "id": "eac482e71cb6cc4a",
+            "id": "24cf06ac95b34836",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "design-system/System Design for million requests.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "eventual",
+                "query": "SystemEx",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "design-system/System Design for million requests.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "design-system/System Design for million requests.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "design-system/System Design for million requests.md"
+              }
             }
           },
           {
@@ -151,29 +160,33 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "eac482e71cb6cc4a",
+  "active": "24cf06ac95b34836",
   "lastOpenFiles": [
-    "AWS/AWS - SAA.md",
-    "assets/s3_object_ap_lambda.png",
-    "assets/s3_access_point_vpc.png",
-    "assets/s3-access-point.png",
-    "assets/s3-cors.png",
+    "design-system/0. Basic System design.md",
+    "assets/SystemExample.png",
+    "assets/Basic-system.png",
     "assets/cors-example.png",
-    "assets/s3_select.png",
-    "assets/s3_event_2_eventbridge.png",
-    "assets/s3_requester_pay.png",
+    "assets/AWS_Accelerator_vs_CF.png",
+    "assets/system-cdn.png",
+    "assets/System-cache.png",
+    "assets/Spread-Placement-EC2.png",
+    "assets/SNI-example.png",
+    "assets/Sharding-example.png",
+    "assets/setnx-lock-redis.png",
+    "Best practices/Redis.md",
+    "AWS/AWS SQS - SNS.md",
+    "AWS/AWS - SAA.md",
+    "AWS/AWS - FCJ.md",
     "AWS/SAA-C03-Exams/saa_c03_exam.md",
-    "assets/EBS_EFS_compare.png",
-    "Pasted image 20240107161041.png",
+    "Interview.md",
+    "TodayILearn.md",
     "Excalidraw/AWS.excalidraw.md",
     "Excalidraw/board.excalidraw.md",
     "Excalidraw/Drawing 2024-01-07 16.21.13.excalidraw.md",
-    "Untitled.md",
     "Untitled.canvas",
     "Untitled 1.canvas",
     "Database/Database - Transaction.md",
     "Techs/JWT - JSON Web Token.md",
-    "Interview.md",
     "Techs/gRPC vs REST.md",
     "Techs/Golang.md",
     "Database/4. Database Design.md",
@@ -183,15 +196,11 @@
     "AWS/SAA-C03-Exams-Questions-Answers/SAA_exam.md",
     "AWS/SAA-C03-Exams-Questions-Answers/README.md",
     "Network/HTTPS - TLS - SSL.md",
-    "design-system/0. Basic System design.md",
-    "TodayILearn.md",
     "design-system/System Design for million requests.md",
     "Developer ROADMAPS.md",
     "CV Preparation.md",
     "design-system/Availability.md",
     "design-system/Caching.md",
-    "design-system/OAuth.md",
-    "Network/Protocol- IP, TCP, HTTP.md",
     "AWS",
     "assets/PKI_with_DigitalSignature.png.crdownload",
     "assets/not-processed/work/kyber_test.pdf",

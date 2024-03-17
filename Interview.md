@@ -204,3 +204,12 @@ NodeJs handles requests using an Event loop inside NodeJs environment.
 # What happens when you type an URL into a web browser
 
 [What happens when you type a URL into your browser? — The big picture (with Cloud) | by Christopher Le | Jun, 2023 | Medium](https://medium.com/@locvicvn1234/what-happens-when-you-type-a-url-into-your-browser-the-with-aws-ec2-8d53dca6decc)
+
+
+# Docker
+**Container**: a standard way to package your application code, configuration and dependencies into a single resource
+- solve isolation problem
+- conflict dependencies, configuration
+-
+
+Pod: a group of containers deployed together on the same host
