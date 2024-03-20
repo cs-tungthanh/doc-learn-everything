@@ -2,6 +2,10 @@
 
 
 # Highlighted Feature
+SQS is a managed service
+- It scales automatically - don't need ASG
+- Invisibility timeout gives more time to the consumer to process the message and prevent duplicate reading of the message
+- SNS + SQS Fan out Pattern: 1 message send to SNS topic and fan out to multiple SQS queues
 ## SQS Long Polling / Short Polling
 > Default -> Short Polling when `WaitTimeSeconds=0`
 
@@ -16,6 +20,10 @@ When we consume messages from a queue using short polling
 ## SQS FIFO
 - cannot affect with IoT trigger
 - Limit throughput 300 msg/sec
+- 2 Features
+	- preserved ORDER
+	- Duplicated messages are not introduced into the queue => processed exactly ONE
+- 
 
 
 ## SNS 
@@ -26,4 +34,14 @@ When we consume messages from a queue using short polling
 - in-flight encryption using HTTPS 
 - At rest encryption using KMS
 - Client-side encryption if client wants to perform by itself
+
+
+# Kinesis
+The capacity limits of Kinesis data stream are defined by the number of shards
+- When the limit exceeds (by throughput or number of message) => **ProvisionedThroughputExceeded**
+	- Solution: Increase number of shards
+## Kinesis Data Stream + Kinesis Data Firehose
+This is a perfect combo of technology for loading data near real-time data into **S3** and Redshift**.** Kinesis Data Firehose supports custom data transformations using AWS Lambda.
+
+- **Kinesis Data Stream** is not supported to subscribe SNS Topic, but Kinesis Data Firehose supported
 - 

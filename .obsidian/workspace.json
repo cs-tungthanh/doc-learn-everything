@@ -11,8 +11,24 @@
             "id": "d4445ee8e78031cb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "AWS/AWS EC2 - ECS - EKS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6a58f6486888f78c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/AWS - SAA.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,7 +60,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "SystemEx",
+                "query": "sqs",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,8 +77,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -82,6 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "AWS/AWS EC2 - ECS - EKS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,6 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "AWS/AWS EC2 - ECS - EKS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -119,7 +136,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "AWS/AWS EC2 - ECS - EKS.md"
+              }
             }
           },
           {
@@ -154,6 +173,10 @@
   },
   "active": "d4445ee8e78031cb",
   "lastOpenFiles": [
+    "AWS/AWS SQS - SNS.md",
+    "AWS/AWS - SAA.md",
+    "AWS/AWS - FCJ.md",
+    "AWS/AWS EC2 - ECS - EKS.md",
     "design-system/System Design for million requests.md",
     "design-system/0. Basic System design.md",
     "assets/SystemExample.png",
@@ -167,9 +190,6 @@
     "assets/Sharding-example.png",
     "assets/setnx-lock-redis.png",
     "Best practices/Redis.md",
-    "AWS/AWS SQS - SNS.md",
-    "AWS/AWS - SAA.md",
-    "AWS/AWS - FCJ.md",
     "AWS/SAA-C03-Exams/saa_c03_exam.md",
     "Interview.md",
     "TodayILearn.md",
