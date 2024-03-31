@@ -1,0 +1,1 @@
+![](../assets/5-permission-sys-design.png)

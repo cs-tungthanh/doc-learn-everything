@@ -349,6 +349,17 @@ You have purchased a domain on **GoDaddy** and would like to use Route 53 as t
 	- **Long-Term Storage**
 	- Replication within mutli-AZ
 # S3
+## Overview
+> **Tier** (4): S3 Standard, S3 Infrequent Access, S3 Intelligent, S3 Glacier + Lifecycle policy
+> **UseCase**: Great for big objects (up to 5TB), not so great for many small objects, static file, website hosting...
+> **Feature**: 
+> - scale infinity
+> - Versioning, Encryption, Replication, MFA-Delete, AccessLogs,...
+> - Batch Operation using S3 Batch
+> - S3 Event notification
+> - Encryption: SSE-S3, SSE-KMS, SSE-C, client-side, TLS in transit, default encryption
+> **Performance**: multi-part upload, S3 transfer acceleration, S3 Select
+
 S3 bucket names are [globally unique](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), each bucket is stored in a Region
 S3 Glacier: -> Object Archival
 - use s3 lifecycle rule to transition data to tap storage(S3 glacier)

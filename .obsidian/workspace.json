@@ -20,6 +20,30 @@
             }
           },
           {
+            "id": "b74b0312bf08a6bd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "TodayILearn.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f2f5ba31cdeec019",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/AWS - SAA.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "6a58f6486888f78c",
             "type": "leaf",
             "state": {
@@ -31,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -60,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "sqs",
+                "query": "s3",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -77,7 +102,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -97,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AWS/AWS EC2 - ECS - EKS.md",
+                "file": "AWS/AWS - SAA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AWS/AWS EC2 - ECS - EKS.md",
+                "file": "AWS/AWS - SAA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS/AWS EC2 - ECS - EKS.md"
+                "file": "AWS/AWS - SAA.md"
               }
             }
           },
@@ -171,8 +197,12 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d4445ee8e78031cb",
+  "active": "f2f5ba31cdeec019",
   "lastOpenFiles": [
+    "Permission System Design.md",
+    "assets/5-permission-sys-design.png",
+    "TodayILearn.md",
+    "Database/1. Database Questions.md",
     "AWS/AWS SQS - SNS.md",
     "AWS/AWS - SAA.md",
     "AWS/AWS - FCJ.md",
@@ -188,11 +218,9 @@
     "assets/Spread-Placement-EC2.png",
     "assets/SNI-example.png",
     "assets/Sharding-example.png",
-    "assets/setnx-lock-redis.png",
     "Best practices/Redis.md",
     "AWS/SAA-C03-Exams/saa_c03_exam.md",
     "Interview.md",
-    "TodayILearn.md",
     "Excalidraw/AWS.excalidraw.md",
     "Excalidraw/board.excalidraw.md",
     "Excalidraw/Drawing 2024-01-07 16.21.13.excalidraw.md",
@@ -210,9 +238,6 @@
     "AWS/SAA-C03-Exams-Questions-Answers/README.md",
     "Network/HTTPS - TLS - SSL.md",
     "Developer ROADMAPS.md",
-    "CV Preparation.md",
-    "design-system/Availability.md",
-    "design-system/Caching.md",
     "AWS",
     "assets/PKI_with_DigitalSignature.png.crdownload",
     "assets/not-processed/work/kyber_test.pdf",

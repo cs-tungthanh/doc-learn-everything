@@ -44,4 +44,23 @@ The capacity limits of Kinesis data stream are defined by the number of shards
 This is a perfect combo of technology for loading data near real-time data into **S3** and Redshift**.** Kinesis Data Firehose supports custom data transformations using AWS Lambda.
 
 - **Kinesis Data Stream** is not supported to subscribe SNS Topic, but Kinesis Data Firehose supported
-- 
+
+
+
+# Cognito
+> Generate temporary credentials with STS to access S3, Dynamo, Lambda... with restricted policy
+
+# DAX Dynamo
+- Caching for read for Dynamo DB
+
+
+
+
+- Scale Globally
+	- using CDN (Cloudfront) for distributed static content with S3
+		- Cloudfront can also be used in front of an Load Balancer
+	- leverage Global Dynamo DB to serve data globally
+- Dynamo Stream to catch changes event and trigger some handlers with lambda,..
+- When we want to make data in Dynamo become global or from region to another region
+	- We need to enable Dynamo Stream first
+	- DynamoDB Streams enable DynamoDB to get a changelog and use that changelog to replicate data across replica tables in other AWS Regions.

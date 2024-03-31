@@ -112,3 +112,17 @@ The foreplay of conversation
 It's worth noting that + Clause
 
 
+
+|                  |                                              |
+| :--------------- | :------------------------------------------- |
+| matter of factly | go straight to the problem/situation         |
+| utterly          | fully                                        |
+| shatter (v)      | to break s.th suddenly into very small piece |
+|                  | utterly shattered: hoàn toàn tan vỡ/nát      |
+| medict (n)       | a medical student or docter                  |
+| mincing words    | noi tranh                                    |
+|                  | No point in mincing words                    |
+| skiddy (a)       | a sliding movement (truot)                   |
+| skid (v)         |                                              |
+| more or less     | gần như thế                                  |
+| fascination      | mê hoặc                                      |
