@@ -1,12 +1,22 @@
 ---
 tags:
-  - Event-Loop
   - microtask
   - macrotask
-  - javascript
+  - js
+  - event-loop
 ---
 # Concept
-JS is a single-threaded programming language, it has a single call stack and it can do one thing at a time → that’s what single thread means.
+JS is a single-threaded programming language
+-> It can only execute one line of code at a time (do one thing)
+
+**Event loop** is a mechanism that enables JS to handle asynchronous operation effectively
+
+Event loop as **a continuous cycle** that monitor for events from various sources
+**Event** can include:
+- Network, file, database I/O
+- Time expiration 
+- User Input
+
 
 There're 3 parts:
 - **Call stack (LIFO)**: when you step into a function, you put s.th onto the stack, when you return func, you pop off the top of stack.
@@ -24,7 +34,6 @@ There're 3 parts:
 	- setTimeout(), setInterval()
 
 
-
 If we use await, it will suspend the func execution.
 It's important to note that while the `async` function is suspended during the `await` expression, the rest of the program and other tasks continue to execute. This behavior enables asynchronous programming without blocking the main execution thread.
 
@@ -37,7 +46,6 @@ It's important to note that while the `async` function is suspended during the
 3. while len(macrotask) > 0:
 	- execute them
 
-
 ## Microtask
 Promise handlers `.then`/`.catch`/`.finally` handler becomes a microtask.
 Promise handling is always asynchronous, as all promise actions pass through the internal **"promise jobs"** queue, also called **"microtask queue"** (V8 term).
@@ -49,7 +57,6 @@ alert("code finished"); // this alert shows first
 But now we understand that `unhandledrejection` is generated when the microtask queue is complete: the engine examines promises and, if any of them is in the "rejected" state, then the event triggers.
 
 ## Example
-
 ```javascript
 console.log(1);
 setTimeout(() => console.log(2));
@@ -96,3 +103,10 @@ console.log(7);
 - Print 2,6,4
 
 -> Result: 1, 7, 3, 5, 2, 6, 4
+
+
+- Imagine the event loop as a busy chef in a restaurant.
+- The chef can only cook one dish at a time (single thread).
+- But, the chef can take orders (events) from waiters (event sources).
+- While waiting for food to cook (long-running operations), the chef can prep other ingredients or take new orders (non-blocking).
+- Once a dish is ready (event completion), the chef receives a notification (callback) and plates it for serving.

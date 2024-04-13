@@ -4,59 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "f8909e7a02e88c88",
+        "id": "5a6154250c630f68",
         "type": "tabs",
         "children": [
           {
-            "id": "d4445ee8e78031cb",
+            "id": "1da66b0256fd2d32",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AWS/AWS EC2 - ECS - EKS.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b74b0312bf08a6bd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TodayILearn.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f2f5ba31cdeec019",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AWS/AWS - SAA.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6a58f6486888f78c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AWS/AWS - SAA.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -102,8 +61,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -123,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AWS/AWS - SAA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AWS/AWS - SAA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "AWS/AWS - SAA.md"
-              }
+              "state": {}
             }
           },
           {
@@ -197,16 +151,21 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "f2f5ba31cdeec019",
+  "active": "1da66b0256fd2d32",
   "lastOpenFiles": [
+    "AWS/AWS - SAA.md",
+    "Interview.md",
+    "AWS/AWS - Database.md",
+    "AWS/AWS - FCJ.md",
+    "AWS/AWS SQS - SNS.md",
+    "AWS/AWS EC2 - ECS - EKS.md",
+    "TodayILearn.md",
+    "Techs/Event Loop in Javascript.md",
+    "Goroutine Scheduler Revealed_ Never See Goroutines the Same Way Again.pdf",
+    "kubectl",
     "Permission System Design.md",
     "assets/5-permission-sys-design.png",
-    "TodayILearn.md",
     "Database/1. Database Questions.md",
-    "AWS/AWS SQS - SNS.md",
-    "AWS/AWS - SAA.md",
-    "AWS/AWS - FCJ.md",
-    "AWS/AWS EC2 - ECS - EKS.md",
     "design-system/System Design for million requests.md",
     "design-system/0. Basic System design.md",
     "assets/SystemExample.png",
@@ -220,7 +179,6 @@
     "assets/Sharding-example.png",
     "Best practices/Redis.md",
     "AWS/SAA-C03-Exams/saa_c03_exam.md",
-    "Interview.md",
     "Excalidraw/AWS.excalidraw.md",
     "Excalidraw/board.excalidraw.md",
     "Excalidraw/Drawing 2024-01-07 16.21.13.excalidraw.md",
@@ -237,14 +195,11 @@
     "AWS/SAA-C03-Exams-Questions-Answers/SAA_exam.md",
     "AWS/SAA-C03-Exams-Questions-Answers/README.md",
     "Network/HTTPS - TLS - SSL.md",
-    "Developer ROADMAPS.md",
     "AWS",
     "assets/PKI_with_DigitalSignature.png.crdownload",
     "assets/not-processed/work/kyber_test.pdf",
     "assets/not-processed/work/bí-kiếp-pv.mov",
     "assets/not-processed/work/Best-git-repo.mp4",
-    "Techs",
-    "pdf/System Design-TheBigArchive.pdf",
-    "pdf/System Design Interview.pdf"
+    "Techs"
   ]
 }

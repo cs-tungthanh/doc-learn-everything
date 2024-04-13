@@ -6,6 +6,18 @@ SQS is a managed service
 - It scales automatically - don't need ASG
 - Invisibility timeout gives more time to the consumer to process the message and prevent duplicate reading of the message
 - SNS + SQS Fan out Pattern: 1 message send to SNS topic and fan out to multiple SQS queues
+
+# SQS
+## Security
+- In-flight encryption using HTTPS
+- At rest encryption using KMS keys
+- Client-side encryption if the clients want to perform en/decryption itself
+## Access control
+- IAM policies to regulate access to SQS
+- SQS Access Policy (similar to S3 bucket policy)
+	- useful for cross-account 
+	- useful for other service to write into SQS
+
 ## SQS Long Polling / Short Polling
 > Default -> Short Polling when `WaitTimeSeconds=0`
 

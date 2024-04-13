@@ -17,7 +17,6 @@
 - JSON is a language-independent data format. This means that a JSON document can be used with any programming language.
 
 ### Why XML
-
 **Why concurrency?**
 
 Optimize processes and increase throughput using the same resource
@@ -108,11 +107,19 @@ B-Tree is a generalization of a self-balancing binary search tree
 - Why do we need to use a pointer (pass-by-reference) instead of pass by value
     - → we want to modify the pointer
     - → the struct is very large and a deep copy is expensive
-
+- How to optimize query
+	- partition
+	- index
+	- denomarlize 
 # Golang
 - Go thì hỏi Goroutine, Select.
 - Goroutine là gì, benefits, drawback
 - why go is fast, concurrency modeling in go
+	- statically typed -> type of each var is known at compiled time
+	- lightweight Goroutines : lightweight processes called Goroutines
+			- channels - powerful mechanism to communicate and synchronize between goroutines
+			- **No Threading Overhead:** Unlike traditional threads, goroutines don't require heavy OS involvement for creation and management.
+	- Garbage collection: automatically manage memory allocation and deallocation.
 - Go: set n > number of process → what happens + how to properly set n value
 - (Slice and Map act as references)
 - map in Golang quản lý bộ nhớ s

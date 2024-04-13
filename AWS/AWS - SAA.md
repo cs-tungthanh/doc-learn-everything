@@ -232,52 +232,23 @@ There're 2 type of Load balancer
 #### Auto-scaling group with custom policy?
 Your boss asked you to scale your Auto Scaling Group based on the **number of requests per minute** your application makes to your database. What should you do?
 -> Create **a CloudWatch custom metric** then create a CloudWatch Alarm on this metric to scale your ASG
+## Auto Scaling Group
+- It is free -> service in EC2
+- It's possible to scale an ASG based on CloudWatch Alarms
+	- CW Alarms trigger Scaling process
+- Based on Alarm:
+	- We can create scale out(increase) / scale in(decrease) policy
 
-
-# IV. Database
-Tricks:
-- In a **stopped** RDS DB, you'll still pay for storage. If you plan for stopping it for a long time (ex: only use 2 days/month,...), you should snapshot and restore instead
-- How do you encrypt an unencrypted RDS DB instance
-	- Create a snapshot of the unencrypted RDS DB instance, copy the snapshot and tick **"Enable encryption"**, then restore the RDS DB instance from the encrypted snapshot
-- When you have an un-encrypted RDS DB - you **CANNOT** create **encrypted** Read Replicas
-- If you need to create long term backups for Aurora DB  => should perform on DEMAND backups 
-- If you want to test in your production db -> you can use Aurora Cloning to create test db.
-- Which RDS **(NOT Aurora)** feature when used does not require you to change the SQL connection string?
-	- Multi-AZ -> SQL conn str will not change
-	- Read Replicas -> add new endpoints with their own DNS name. We need to change our application to reference them individually to balance the read load.
-- Which of the following statement is true regarding replication in both RDS Read Replicas and Multi-AZ?
-	- Read Replica uses Asynchronous Replication and Multi-AZ uses Synchronous Replication
-- 
-## RDS
-
-### RDS multi AZ - Disaster Recovery
-- SYNC replication
-- One DNS name - automatic app failover to standby
-- Increase Availability
-- failover in case of loss of AZ, loss of network, instance or storage failure
-- No manual intervention in apps
-- Not used for scaling
-
-### RDS Proxy
-- Allow Apps to pool and share DB Connections established with the DB.
-- Fully serverless, autoscaling, HA (multi-AZ)
-- Reduced RDS & Aurora failover time up to 66%
-	- Failover is backup operational mode (a procedure to handle fault or failure)
-- Never publicly available (must be accessed from VPC)
-
-## Aurora
-
-
-# Elastic Cache
-| Redis                                    | Memcached                                      |
-|------------------------------------------|------------------------------------------------|
-| Multi AZ with Auto-Failover              | Multi-node for partitioning of data (sharding) |
-| Read Replicas to scale reads and have HA | No HA (no replication)                         |
-| Data durability by using AOF persistence | Non persistent                                 |
-| Backup and restore feature               | No backup and restore                          |
-| Support Sets and Sorted sets             | Multi-threaded arch                            |
-- Redis is really for HA, backup, read replicas
-- Memcached is a pure cache that's distributed. Your data can be lose, no HA
+### Dynamic Scaling
+#### Target Tracking Policy
+- simple to setup
+- Example: I want the average ASG CPU to stay at **around** 40%
+#### Simple / Step Scaling
+- When CW Alarm is triggered
+	- when CPU > 70 -> add 2 units
+	- When CPU < 30 -> remove 1
+### Scheduled Scaling
+- Increase the min capacity to 10 at 15pm on Fridays
 
 
 # DNS
@@ -285,6 +256,7 @@ Tricks:
 - TLD: Top level domain
 - SLD: Second level domain
 ![](../assets/DNS-Howitwork.png)
+
 
 ## Route 53
 - 100% HA (SLA), fully managed and Authoritative DNS
@@ -348,102 +320,7 @@ You have purchased a domain on **GoDaddy** and would like to use Route 53 as t
 2. Persistent File System
 	- **Long-Term Storage**
 	- Replication within mutli-AZ
-# S3
-## Overview
-> **Tier** (4): S3 Standard, S3 Infrequent Access, S3 Intelligent, S3 Glacier + Lifecycle policy
-> **UseCase**: Great for big objects (up to 5TB), not so great for many small objects, static file, website hosting...
-> **Feature**: 
-> - scale infinity
-> - Versioning, Encryption, Replication, MFA-Delete, AccessLogs,...
-> - Batch Operation using S3 Batch
-> - S3 Event notification
-> - Encryption: SSE-S3, SSE-KMS, SSE-C, client-side, TLS in transit, default encryption
-> **Performance**: multi-part upload, S3 transfer acceleration, S3 Select
-
-S3 bucket names are [globally unique](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), each bucket is stored in a Region
-S3 Glacier: -> Object Archival
-- use s3 lifecycle rule to transition data to tap storage(S3 glacier)
-
-- Best practice: 
-	- access (EC2,..) in the same region for reducing latency and data transfer costs
-
-- S3 Get Byte Range Fetch 
-	- you can fetch a byte-range from an object, transferring only the specified portion
-	- Use case: indexing s3 objects in rds
-		- create app that get byte range(first n bytes) and store that information in RDS
-- S3 Replication
-	- same region
-	- cross region
-	- Only replicate Delete Maker - cannot replicate Delete object
-- How to prevent accidentally remove on s3
-	- versioning
-	- MFA for delete operation
-- S3 Event
-	- Event: ObjectCreated/Removed/Restore/Replication
-		- Direct deliver to: SNS, SQS, Lambda
-		- Delivery through EventBridge to aws services
-	- **Simple Use Cases:** For straightforward scenarios where you only need to send events to SNS, SQS, or Lambda, direct delivery might suffice.
-	- **Complex Workflows:** For more intricate event-driven architectures, advanced features, or broader integrations, EventBridge is often the preferred choice.
-	- ![](../../assets/s3_event_2_eventbridge.png)
-- S3 Lifecycle Rules
-	- Expiration Rule
-	- Transition Rule
-	- Use case: use Lifecycle Policy to automate old/unfinished parts deletion
-	- How can you analyze the optimal number of days to move objects between different storage tiers?
-		- Using S3 Analytics
-- S3 - Requester Pays
-	- ![](../../assets/s3_requester_pay.png)
-- S3 Performance
-	- Multi-part upload: - parallelize uploads 
-		- recommend file >100MB
-		- must use for file > 5GB
-	- S3 transfer acceleration: optimize transfer operation caused by distance. 
-		- increase transfer speed by transferring to AWS Edge location which will forward to S3  in the target region
-- S3 Select 
-	- ![](../../assets/s3_select.png)
-## S3 Encryption
-- **SSE-S3** (default)
-	- Encryption Happen in AWS
-	- Keys are Managed by AWS S3 (owned by AWS) - no control
-- **SSE-KMS**:
-	- Encryption Happen in AWS
-	- Key stored in AWS (KMS) - but we have full-control over the rotation policy of encryption key
-- **SSE-C**: encryption with customer-provided key
-	- Encryption happens in AWS 
-	- **CLIENT** have full control over the encryption keys.
-- **Client-side encryption**
-	- when company don't trust encryption in AWS they will do its own.
-
-## S3 Access point
-
-![](../assets/s3-access-point.png)
-![](../assets/s3_access_point_vpc.png)
-
-### S3 Object Lambda Access Point
-We will have a bucket to ingest raw data and create another S3 Object Lambda access point to consume data without creating another bucket
-
-![](../assets/s3_object_ap_lambda.png)
-- 
-## S3 QA
-1. For compliance reasons, your company has a policy mandate that database backups must be retained for 4 years. It shouldn't be possible to erase them. What do you recommend?
-	- Glacier Vaults with Vault Lock Policies
-2. S3 Object lock - A company has its data and files stored on some S3 buckets. Some of these files need to be kept for a predefined period of time and protected from being overwritten and deletion according to company compliance policy. Which S3 feature helps you in doing this?
-	- S3 Object Lock - Retention Compliance Mode
-3. Which of the following S3 Object Lock configuration allows you to prevent an object or its versions from being overwritten or deleted indefinitely and gives you the ability to remove it manually?
-	- Legal Hold
-4. 
-
-## CORS
-- Cross origin resource sharing: defines a way for client web applications that are loaded in one domain to interact with resources in a different domain
-- Origin = scheme (protocol) + host (domain) + port
-- Web browser based mechanism to allow requests to other origins while  visiting origin.
-- using: CORS header 
-- ![](../../assets/cors-example.png)
-
-- Example in S3
-- ![](../assets/s3-cors.png)
-	- step1: user get index.html from bucket-html
-	- step2: inside index.html that contains image from bucket assets -> so web browser need to get image with origin of html to get image
+# 
 
 
 # CloudFont - CDN  - Layer 7 (app)
@@ -478,16 +355,10 @@ You have a static website hosted on an S3 bucket. You have created a CloudFront 
 ![](aws-datasync.png)
 
 
-# SQS
-## Security
-- In-flight encryption using HTTPS
-- At rest encryption using KMS keys
-- Client-side encryption if the clients want to perform en/decryption itself
-## Access control
-- IAM policies to regulate access to SQS
-- SQS Access Policy (similar to S3 bucket policy)
-	- useful for cross-account 
-	- useful for other service to write into SQS
+
+# Athena
+> Athena is serverless SQL service and results are stored in S3
+
 
 
 
