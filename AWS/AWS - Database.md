@@ -27,6 +27,17 @@ Tricks:
 	- Failover is backup operational mode (a procedure to handle fault or failure)
 - Never publicly available (must be accessed from VPC)
 
+## 1.3. RDS Type
+> RDS provides 2 types: 
+> 1. Magnetic (for backward compatibility)
+> 	- the most cost-effective storage type
+> 	- light or burst I/O requirements
+> 	- for backward compatibility
+> 1. General Purpose - SSD
+> 	- workloads running on medium-sized DB instances
+> 2. Provisioned IOPS
+> 	- more expensive
+> 	- high IOPS: low I/O latency and consistent I/O throughput
 
 # 2. Elastic Cache
 
@@ -119,7 +130,11 @@ Use case: use Lifecycle Policy to automate old/unfinished parts deletion
 We will have a bucket to ingest raw data and create another S3 Object Lambda access point to consume data without creating another bucket
 
 ![](../assets/s3_object_ap_lambda.png)
-- 
+## 3.5. S3 Types
+1. **Standard S3**
+2. **S3 Reduced Redundancy Storage (RRS)**
+	- store noncritical, reproducible data at lower levels of redundancy than Amazon S3’s standard storage
+	- It provides a highly available solution for distributing or sharing content that is durably stored elsewhere, or for **storing thumbnails**, **transcoded media**, or other **processed data** that can be easily reproduced
 ## 3.5. S3 QA
 1. For compliance reasons, your company has a policy mandate that database backups must be retained for 4 years. It shouldn't be possible to erase them. What do you recommend?
 	- Glacier Vaults with Vault Lock Policies
@@ -127,6 +142,11 @@ We will have a bucket to ingest raw data and create another S3 Object Lambda acc
 	- S3 Object Lock - Retention Compliance Mode
 3. Which of the following S3 Object Lock configuration allows you to prevent an object or its versions from being overwritten or deleted indefinitely and gives you the ability to remove it manually?
 	- Legal Hold
+4. Your website is serving on-demand training videos to your workforce. Videos are uploaded monthly in high resolution MP4 format. Your workforce is distributed globally often on the move and using company-provided tablets that require the HTTP Live Streaming (HLS) protocol to watch a video. Your company has no video transcoding expertise and it required you may need to pay for a consultant.How do you implement the most cost-efficient architecture without compromising high availability and quality of video delivery?  
+	- A. A video transcoding pipeline running on EC2 using SQS to distribute tasks and Auto Scaling to adjust the number of nodes depending on the length of the queue. EBS volumes to host videos and EBS snapshots to incrementally backup original files after a few days. CloudFront to serve HLS transcoded videos from EC2.
+	- B. Elastic Transcoder to transcode original high-resolution MP4 videos to HLS. EBS volumes to host videos and EBS snapshots to incrementally backup original files after a few days. CloudFront to serve HLS transcoded videos from EC2.
+	- [x] **Elastic Transcoder to transcode original high-resolution MP4 videos to HLS**. S3 to host videos with Lifecycle Management to **archive original files** to Glacier after a few days. **CloudFront (CDN) to serve HLS transcoded videos** from S3.
+	- D. A video transcoding pipeline running on EC2 using SQS to distribute tasks and Auto Scaling to adjust the number of nodes depending on the length of the queue. S3 to host videos with Lifecycle Management to archive all files to Glacier after a few days. CloudFront to serve HLS transcoded videos from Glacier.
 
 
 ## 3.6. CORS
@@ -149,6 +169,9 @@ We will have a bucket to ingest raw data and create another S3 Object Lambda acc
 - **Redshift** is specifically designed to work with columnar data.
 - When run analytical queries, Redshift only needs to retrieve the relevant columns, reducing data scanned + speed up processing.
 
+- The cost using in Redshift are based on computing nodes (2 types of node) (at hourly rate)
+	- On-demand Node (expensive)
+	- Reserved Node (less expensive - billed at discounted hourly rates)
 # 4.2. Questions
 - Prepare for disaster recovery plan
 	- Enable automated snapshots then configure your Redshift cluster to automatically copy snapshot to another AWS Region

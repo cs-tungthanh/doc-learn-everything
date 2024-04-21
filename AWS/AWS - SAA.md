@@ -360,14 +360,48 @@ You have a static website hosted on an S3 bucket. You have created a CloudFront 
 > Athena is serverless SQL service and results are stored in S3
 
 
+# CloudTrail
+- **CloudTrail Console** to view the last 90 days of recorded API activity. For events older than 90 days, use Athena to analyze CloudTrail logs stored in S3.
+- **CloudTrail Insights** help AWS users identify and respond to unusual activity associated with API calls and API error rates by continuously analyzing CloudTrail management events.
+# AWS Config
+- To **evaluate compliance** of your resource's configuration
+- **AWS Config Remediations** allows you to remediate **non-compliant** resource that are evaluated by AWS Config Rule.
+- you want to be notified when someone change service config(EC2, LB,..) -> use **AWS Config notification**.
 
+# CloudWatch
+- **CloudWatch Metric Stream** allows to you to send metrics in near realtime to S3 (through Kinesis Data Firehose) and other third party service (Spunk,...)
+- **CloudWatch Contributor Insights** to analyze log data and create time series that display contributor data
+	- we can use IpAddress as a key to identity Contributor for abnormal detection: (which ip is spamming to the server)
+# CloudWatch - CloudTrail - AWS Config
+## CloudWatch
+- Performance monitoring (metrics, CPU, Memory,...) + Dashboard
+- Event & Alerting
+- Log Aggregation, Analytis
+## CloudTrail
+- Record API calls made within your account by everyone
+- Can define trails for specific Resource
+- Global Service
+- 
+## AWS Config
+- Record configuration changes
+- Evaluate resource against compliance rules
+- Get timeline of changes and compliance
+
+## For Elastic Load balancer
+### CloudWatch
+- Monitoring incoming connection metric
+- Visualize error codes 
+- Make dashboard to get an idea of your LB performance
+### CloudTrail
+- Track who made any changes with your LB with API Calls
+### AWS Config
+- Track SG Rules 
+- Track configuration changes 
+- Ensure an SSL cert is always assigned to the LB (compliance)
+
+
+How would you **monitor your EC2 instance memory** usage in CloudWatch?
+- -> Use the **Unified CloudWatch Agent** to push memory usage as a **custom metric** to **CloudWatch**
 
 I'm going to do a deep dive in all of those over time
-
-Let's have a look into each of these ... in detail
-- For A, ....
-
-
-
-
 It's up to you as SA to really understand trade-offs for doing and why you're doing things and cost implication of what you're doing

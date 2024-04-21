@@ -10,12 +10,43 @@
           {
             "id": "1da66b0256fd2d32",
             "type": "leaf",
+            "pinned": true,
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "AWS/SAA-C03-Exams/saa_c03_exam.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true
+            }
+          },
+          {
+            "id": "710e685f7e2efdf5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/AWS - Database.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9852e65482c5d9dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/AWS - SAA.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -81,6 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "AWS/AWS - SAA.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "AWS/AWS - SAA.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +151,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "AWS/AWS - SAA.md"
+              }
             }
           },
           {
@@ -151,13 +186,14 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "1da66b0256fd2d32",
+  "active": "9852e65482c5d9dc",
   "lastOpenFiles": [
-    "AWS/AWS - SAA.md",
-    "Interview.md",
-    "AWS/AWS - Database.md",
-    "AWS/AWS - FCJ.md",
     "AWS/AWS SQS - SNS.md",
+    "Interview.md",
+    "AWS/SAA-C03-Exams/saa_c03_exam.md",
+    "AWS/AWS - Database.md",
+    "AWS/AWS - SAA.md",
+    "AWS/AWS - FCJ.md",
     "AWS/AWS EC2 - ECS - EKS.md",
     "TodayILearn.md",
     "Techs/Event Loop in Javascript.md",
@@ -178,7 +214,6 @@
     "assets/SNI-example.png",
     "assets/Sharding-example.png",
     "Best practices/Redis.md",
-    "AWS/SAA-C03-Exams/saa_c03_exam.md",
     "Excalidraw/AWS.excalidraw.md",
     "Excalidraw/board.excalidraw.md",
     "Excalidraw/Drawing 2024-01-07 16.21.13.excalidraw.md",

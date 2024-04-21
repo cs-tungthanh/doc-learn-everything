@@ -18,13 +18,15 @@
 
 ### Why XML
 **Why concurrency?**
+- Optimize processes and increase throughput using the same resource
 
-Optimize processes and increase throughput using the same resource
+> **Concurrency**: deal with a lot of things at once
+> **Parallelism**: doing a lot of thing at once
+
 
 The Tree is a data structure that is consisting of **nodes** (called vertices or points) and **edges** (lines)
 
 B-Tree is a generalization of a self-balancing binary search tree
-
 - in which each node can hold more than one search key and have more than 2 children.
 - Every node has at most m children
 - Every non-leaf node (except the root) has a least `m/2` children.
@@ -220,3 +222,24 @@ NodeJs handles requests using an Event loop inside NodeJs environment.
 -
 
 Pod: a group of containers deployed together on the same host
+
+
+## Program - Process - Thread
+1. The program contains a set of instructions.
+2. The program is loaded into memory. It becomes one or more
+running processes.
+3. When a process starts, it is assigned memory and resources. A
+process can have one or more threads. For example, in the Microsoft
+Word app, a thread might be responsible for spelling checking and the
+other thread for inserting text into the doc.
+
+
+Processes are usually independent, while threads exist as subsets
+of a process.
+🔹 Each process has its own memory space. Threads that belong to
+the same process share the same memory.
+🔹 A process is a heavyweight operation. It takes more time to create
+and terminate.
+🔹 Context switching is more expensive between processes.
+🔹 Inter-thread communication is faster for threads.
+
